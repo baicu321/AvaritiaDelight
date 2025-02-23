@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "avaritia_delight:block/blaze_tomatoes_stage_0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "support=none": {
+      "model": "avaritia_delight:block/extreme_cooking_pot"
+    },
+    "support=handle": {
+      "model": "avaritia_delight:block/extreme_cooking_pot_handle"
+    },
+    "support=tray": {
+      "model": "avaritia_delight:block/extreme_cooking_pot_tray"
+    }
+  }
+}

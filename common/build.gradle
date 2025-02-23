@@ -1,0 +1,20 @@
+architectury {
+    common rootProject.enabled_platforms.split(',')
+}
+
+dependencies {
+    // We depend on Fabric Loader here to use the Fabric @Environment annotations,
+    // which get remapped to the correct annotations on each platform.
+    // Do NOT use other classes from Fabric Loader.
+    modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+
+    // Architectury API. This is optional, and you can comment it out if you don't need it.
+    modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
+
+    modImplementation "maven.modrinth:re-avaritia:$rootProject.avaritia_fabric_version"
+    modImplementation "maven.modrinth:farmers-delight-refabricated:$rootProject.delight_fabric_version"
+
+    compileOnly "io.github.fabricators_of_create.Porting-Lib:base:2.3.4+1.20.1"
+    compileOnly "io.github.fabricators_of_create.Porting-Lib:extensions:2.3.4+1.20.1"
+    compileOnly "io.github.fabricators_of_create.Porting-Lib:tool_actions:2.3.4+1.20.1"
+}

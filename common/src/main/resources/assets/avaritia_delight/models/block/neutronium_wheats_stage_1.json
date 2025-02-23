@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "avaritia_delight:block/neutronium_wheats_stage_1"
+  }
+}

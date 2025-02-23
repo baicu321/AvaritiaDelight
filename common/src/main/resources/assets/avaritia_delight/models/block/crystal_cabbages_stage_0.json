@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "avaritia_delight:block/crystal_cabbages_stage_0"
+  }
+}
