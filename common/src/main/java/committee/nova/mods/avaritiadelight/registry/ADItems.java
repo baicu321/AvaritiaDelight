@@ -2,6 +2,8 @@ package committee.nova.mods.avaritiadelight.registry;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
 import committee.nova.mods.avaritiadelight.item.AvaritiaDelightKnifeItem;
+import committee.nova.mods.avaritiadelight.item.InfinityAppleItem;
+import committee.nova.mods.avaritiadelight.item.SliceOfEndlessCakeItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.item.Item;
@@ -24,13 +26,13 @@ public final class ADItems {
     public static final RegistrySupplier<Item> CRYSTAL_CABBAGE_LEAF = register("crystal_cabbage_leaf", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> RAW_CRYSTAL_PASTA = register("raw_crystal_pasta", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> DIAMOND_LATTICE_FRIES = register("diamond_lattice_fries", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
-    public static final RegistrySupplier<Item> INFINITY_APPLE = register("infinity_apple", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> INFINITY_APPLE = register("infinity_apple", InfinityAppleItem::new);
     public static final RegistrySupplier<Item> INFINITY_LARGE_HAMBURGER = register("infinity_large_hamburger", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> INFINITY_TACO = register("infinity_taco", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> NEUTRONIUM_POT = register("neutronium_pot", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> NEUTRONIUM_WHEAT_DOUGH = register("neutronium_wheat_dough", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> PASTA_WITH_COSMIC_MEATBALLS = register("pasta_with_cosmic_meatballs", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
-    public static final RegistrySupplier<Item> SLICE_OF_ENDLESS_CAKE = register("slice_of_endless_cake", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> SLICE_OF_ENDLESS_CAKE = register("slice_of_endless_cake", SliceOfEndlessCakeItem::new);
 
     public static <T extends Item> RegistrySupplier<T> register(String id, Supplier<T> supplier) {
         return REGISTRY.register(id, supplier);
