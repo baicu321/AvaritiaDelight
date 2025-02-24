@@ -1,28 +1,28 @@
 {
   "variants": {
-    "age=0": {
+    "age=0,ropelogged=false": {
       "model": "avaritia_delight:block/blaze_tomatoes_stage_0"
     },
-    "age=1": {
-      "model": "avaritia_delight:block/blaze_tomatoes_stage_0"
-    },
-    "age=2": {
+    "age=1,ropelogged=false": {
       "model": "avaritia_delight:block/blaze_tomatoes_stage_1"
     },
-    "age=3": {
-      "model": "avaritia_delight:block/blaze_tomatoes_stage_1"
-    },
-    "age=4": {
+    "age=2,ropelogged=false": {
       "model": "avaritia_delight:block/blaze_tomatoes_stage_2"
     },
-    "age=5": {
-      "model": "avaritia_delight:block/blaze_tomatoes_stage_2"
-    },
-    "age=6": {
+    "age=3,ropelogged=false": {
       "model": "avaritia_delight:block/blaze_tomatoes_stage_3"
     },
-    "age=7": {
-      "model": "avaritia_delight:block/blaze_tomatoes_stage_3"
+    "age=0,ropelogged=true": {
+      "model": "avaritia_delight:block/blaze_tomatoes_vine_stage_0"
+    },
+    "age=1,ropelogged=true": {
+      "model": "avaritia_delight:block/blaze_tomatoes_vine_stage_1"
+    },
+    "age=2,ropelogged=true": {
+      "model": "avaritia_delight:block/blaze_tomatoes_vine_stage_2"
+    },
+    "age=3,ropelogged=true": {
+      "model": "avaritia_delight:block/blaze_tomatoes_vine_stage_3"
     }
   }
 }
