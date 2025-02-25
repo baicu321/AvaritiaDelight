@@ -6,6 +6,7 @@
   "client": [
   ],
   "mixins": [
+    "BlockEntityTypeAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

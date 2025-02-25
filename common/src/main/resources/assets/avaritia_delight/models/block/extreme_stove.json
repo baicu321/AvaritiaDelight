@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "avaritia_delight:block/extreme_stove_bottom",
+    "front": "avaritia_delight:block/extreme_stove_front",
+    "side": "avaritia_delight:block/extreme_stove_side",
+    "top": "avaritia_delight:block/extreme_stove_top"
+  }
+}

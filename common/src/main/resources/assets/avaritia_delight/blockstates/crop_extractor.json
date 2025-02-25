@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "avaritia_delight:block/crop_extractor",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "avaritia_delight:block/crop_extractor",
+      "y": 180
+    },
+    "facing=south": {
       "model": "avaritia_delight:block/crop_extractor"
+    },
+    "facing=west": {
+      "model": "avaritia_delight:block/crop_extractor",
+      "y": 90
     }
   }
 }

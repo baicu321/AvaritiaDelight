@@ -6,7 +6,7 @@ license = "Insert License Here"
 [[mods]]
 modId = "avaritia_delight"
 version = "${version}"
-displayName = "Avaritia Delight"
+displayName = "Avaritia's Delight"
 authors = "Me!"
 description = '''
 This is an example description! Tell everyone what your mod is about!
