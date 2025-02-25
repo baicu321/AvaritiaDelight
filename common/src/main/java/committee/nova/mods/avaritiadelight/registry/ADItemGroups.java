@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 
 import java.util.function.Supplier;
 
-public class ADItemGroups {
+public final class ADItemGroups {
     public static final DeferredRegister<ItemGroup> REGISTRY = DeferredRegister.create(AvaritiaDelight.MOD_ID, RegistryKeys.ITEM_GROUP);
 
     public static final RegistrySupplier<ItemGroup> MAIN = register("main", () -> CreativeTabRegistry.create(Text.translatable("itemGroup.%s.main".formatted(AvaritiaDelight.MOD_ID)), () -> new ItemStack(ADItems.INFINITY_APPLE.get())));

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "avaritia_delight:block/crop_extractor_side",
+    "end": "avaritia_delight:block/crop_extractor"
+  }
+}

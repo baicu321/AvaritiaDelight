@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "avaritia_delight:block/neutronium_hay_bale_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "avaritia_delight:block/neutronium_hay_bale"
+    },
+    "axis=z": {
+      "model": "avaritia_delight:block/neutronium_hay_bale_horizontal",
+      "x": 90
+    }
+  }
+}

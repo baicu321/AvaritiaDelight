@@ -1,6 +1,7 @@
 package committee.nova.mods.avaritiadelight.item.block;
 
 import committee.nova.mods.avaritiadelight.registry.ADBlocks;
+import committee.nova.mods.avaritiadelight.registry.ADItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemConvertible;
@@ -48,6 +49,6 @@ public class BuddingBlazeTomatoBlock extends BuddingTomatoBlock {
 
     @Override
     protected ItemConvertible getBaseSeedId() {
-        return super.getBaseSeedId();
+        return ADItems.BLAZE_TOMATO_SEEDS.get();
     }
 }

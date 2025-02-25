@@ -1,6 +1,6 @@
 package committee.nova.mods.avaritiadelight.item.block;
 
-import committee.nova.mods.avaritiadelight.registry.ADBlocks;
+import committee.nova.mods.avaritiadelight.registry.ADItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.piston.PistonBehavior;
@@ -31,7 +31,7 @@ public class BlazeTomatoBlock extends TomatoVineBlock {
             return ActionResult.PASS;
         else if (isMature) {
             int quantity = 1 + world.random.nextInt(2);
-            Block.dropStack(world, pos, new ItemStack(ADBlocks.BLAZE_TOMATO.get(), quantity));
+            Block.dropStack(world, pos, new ItemStack(ADItems.BLAZE_TOMATO.get(), quantity));
             world.playSound(null, pos, ModSounds.ITEM_TOMATO_PICK_FROM_BUSH.get(), SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, state.with(this.getAgeProperty(), 0), 2);
             return ActionResult.SUCCESS;
@@ -41,6 +41,6 @@ public class BlazeTomatoBlock extends TomatoVineBlock {
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return super.getSeedsItem();
+        return ADItems.BLAZE_TOMATO_SEEDS.get();
     }
 }
