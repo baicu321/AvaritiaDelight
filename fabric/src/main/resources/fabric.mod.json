@@ -5,11 +5,10 @@
   "name": "Avaritia's Delight",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "IAFEnvoy"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Nova-Committee/AvaritiaDelight"
   },
   "license": "MIT",
   "icon": "logo.png",

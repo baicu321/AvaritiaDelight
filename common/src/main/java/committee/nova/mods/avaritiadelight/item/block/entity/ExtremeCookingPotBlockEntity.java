@@ -36,7 +36,7 @@ import vectorwing.farmersdelight.common.utility.ItemUtils;
 import java.util.Optional;
 
 public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements ExtendedMenuProvider, ImplementedInventory, HeatableBlockEntity, Nameable {
-    private static final int RESULT_SLOT = 81, CONTAINER_SLOT = 82, RESULT_WITH_CONTAINER_SLOT = 83;
+    public static final int RESULT_SLOT = 81, CONTAINER_SLOT = 82, RESULT_WITH_CONTAINER_SLOT = 83;
     private final DefaultedList<ItemStack> stacks = DefaultedList.ofSize(84, ItemStack.EMPTY);
     @Nullable
     private Text customName;
@@ -151,14 +151,12 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         boolean didInventoryChange = false;
         if (isHeated && cookingPot.hasInput()) {
             Optional<ExtremeCookingPotRecipe> recipe = level.getRecipeManager().getFirstMatch(ExtremeCookingPotRecipe.Type.INSTANCE, cookingPot, level);
-            if (recipe.isPresent() && cookingPot.canCook(recipe.get())) {
+            if (recipe.isPresent() && cookingPot.canCook(recipe.get()))
                 didInventoryChange = cookingPot.processCooking(recipe.get(), cookingPot);
-            } else {
+            else
                 cookingPot.cookTime = 0;
-            }
-        } else if (cookingPot.cookTime > 0) {
+        } else if (cookingPot.cookTime > 0)
             cookingPot.cookTime = MathHelper.clamp(cookingPot.cookTime - 2, 0, cookingPot.cookTimeTotal);
-        }
 
         ItemStack mealStack = cookingPot.getMeal();
         if (!mealStack.isEmpty()) {
@@ -191,9 +189,9 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
     protected boolean canCook(ExtremeCookingPotRecipe recipe) {
         if (this.hasInput()) {
             ItemStack resultStack = recipe.getOutput(this.world.getRegistryManager());
-            if (resultStack.isEmpty()) {
+            if (resultStack.isEmpty())
                 return false;
-            } else {
+            else {
                 ItemStack storedMealStack = this.getStack(RESULT_SLOT);
                 if (storedMealStack.isEmpty())
                     return true;
@@ -205,44 +203,37 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
                     return storedMealStack.getCount() + resultStack.getCount() <= resultStack.getMaxCount();
 
             }
-        } else {
-            return false;
-        }
+        } else return false;
     }
 
     private boolean processCooking(ExtremeCookingPotRecipe recipe, ExtremeCookingPotBlockEntity cookingPot) {
-        if (this.world == null) {
-            return false;
-        } else {
+        if (this.world == null) return false;
+        else {
             ++this.cookTime;
             this.cookTimeTotal = recipe.getCookTime();
-            if (this.cookTime < this.cookTimeTotal) {
-                return false;
-            } else {
+            if (this.cookTime < this.cookTimeTotal) return false;
+            else {
                 this.cookTime = 0;
                 this.mealContainerStack = recipe.getOutputContainer();
                 ItemStack resultStack = recipe.getOutput(this.world.getRegistryManager());
                 ItemStack storedMealStack = this.getStack(RESULT_SLOT);
-                if (storedMealStack.isEmpty()) {
+                if (storedMealStack.isEmpty())
                     this.setStack(RESULT_SLOT, resultStack.copy());
-                } else if (ItemStack.areItemsEqual(storedMealStack, resultStack)) {
+                else if (ItemStack.areItemsEqual(storedMealStack, resultStack))
                     storedMealStack.increment(resultStack.getCount());
-                }
 
                 //FIXME:: Unlocker?
 //                cookingPot.setLastRecipe(recipe);
 
-                for (int i = 0; i < 6; ++i) {
+                for (int i = 0; i < 81; ++i) {
                     ItemStack slotStack = this.getStack(i);
                     if (slotStack.getItem().hasRecipeRemainder())
                         this.ejectIngredientRemainder(slotStack.getItem().getRecipeRemainder().getDefaultStack());
                     else if (CookingPotBlockEntity.INGREDIENT_REMAINDER_OVERRIDES.containsKey(slotStack.getItem()))
                         this.ejectIngredientRemainder(CookingPotBlockEntity.INGREDIENT_REMAINDER_OVERRIDES.get(slotStack.getItem()).getDefaultStack());
-
                     if (!slotStack.isEmpty())
                         slotStack.decrement(1);
                 }
-
                 return true;
             }
         }

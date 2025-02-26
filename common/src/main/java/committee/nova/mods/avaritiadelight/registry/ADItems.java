@@ -1,9 +1,7 @@
 package committee.nova.mods.avaritiadelight.registry;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
-import committee.nova.mods.avaritiadelight.item.AvaritiaDelightKnifeItem;
-import committee.nova.mods.avaritiadelight.item.InfinityAppleItem;
-import committee.nova.mods.avaritiadelight.item.SliceOfEndlessCakeItem;
+import committee.nova.mods.avaritiadelight.item.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.item.AliasedBlockItem;
@@ -42,6 +40,10 @@ public final class ADItems {
     public static final RegistrySupplier<Item> NEUTRONIUM_WHEAT_DOUGH = register("neutronium_wheat_dough", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> PASTA_WITH_COSMIC_MEATBALLS = register("pasta_with_cosmic_meatballs", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> SLICE_OF_ENDLESS_CAKE = register("slice_of_endless_cake", SliceOfEndlessCakeItem::new);
+
+    public static final RegistrySupplier<Item> FURIOUS_COCKTAIL = register("furious_cocktail", FuriousCocktailItem::new);
+    public static final RegistrySupplier<Item> HOW_DID_WE_GET_HERE = register("how_did_we_get_here", HowDidWeGetHereItem::new);
+    public static final RegistrySupplier<Item> INFINITY_MILK = register("infinity_milk", InfinityMilkItem::new);
 
     public static <T extends Item> RegistrySupplier<T> register(String id, Supplier<T> supplier) {
         return REGISTRY.register(id, supplier);

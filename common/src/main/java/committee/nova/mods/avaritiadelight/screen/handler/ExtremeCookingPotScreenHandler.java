@@ -41,9 +41,24 @@ public class ExtremeCookingPotScreenHandler extends ScreenHandler {
         for (int i = 0; i < 9; ++i)
             for (int l = 0; l < 9; ++l)
                 this.addSlot(new Slot(inventory, l + i * 9, l * 18 - 3, 28 + i * 18));
-        this.addSlot(new Slot(inventory, 81, 195, 100));//Output
-        this.addSlot(new Slot(inventory, 81, 163, 135));//Container
-        this.addSlot(new Slot(inventory, 81, 195, 135));//Final
+        this.addSlot(new Slot(inventory, ExtremeCookingPotBlockEntity.RESULT_SLOT, 195, 100) {
+            @Override
+            public boolean canInsert(ItemStack stack) {
+                return false;
+            }
+
+            @Override
+            public boolean canTakeItems(PlayerEntity playerEntity) {
+                return false;
+            }
+        });//Output
+        this.addSlot(new Slot(inventory, ExtremeCookingPotBlockEntity.CONTAINER_SLOT, 163, 135));//Container
+        this.addSlot(new Slot(inventory, ExtremeCookingPotBlockEntity.RESULT_WITH_CONTAINER_SLOT, 195, 135) {
+            @Override
+            public boolean canInsert(ItemStack stack) {
+                return false;
+            }
+        });//Final
         for (int i = 0; i < 3; ++i)
             for (int l = 0; l < 9; ++l)
                 this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 28 + l * 18, 206 + i * 18));
@@ -53,8 +68,23 @@ public class ExtremeCookingPotScreenHandler extends ScreenHandler {
     }
 
     @Override
-    public ItemStack quickMove(PlayerEntity player, int slot) {
-        return null;
+    public ItemStack quickMove(PlayerEntity player, int invSlot) {
+        ItemStack newStack = ItemStack.EMPTY;
+        Slot slot = this.slots.get(invSlot);
+        if (slot.hasStack()) {
+            ItemStack originalStack = slot.getStack();
+            newStack = originalStack.copy();
+            if (this.inventory.size() <= invSlot && invSlot < this.inventory.size() + this.playerInventory.size()) {
+                if (!this.insertItem(originalStack, 0, 81, false))
+                    return ItemStack.EMPTY;
+            } else if (!this.insertItem(originalStack, this.inventory.size(), this.inventory.size() + this.playerInventory.size(), false))
+                return ItemStack.EMPTY;
+            if (originalStack.isEmpty())
+                slot.setStack(ItemStack.EMPTY);
+            else
+                slot.markDirty();
+        }
+        return newStack;
     }
 
     @Override
@@ -73,6 +103,12 @@ public class ExtremeCookingPotScreenHandler extends ScreenHandler {
         super.onSlotClick(slotIndex, button, actionType, player);
         if (slotIndex >= 0)
             this.slots.get(slotIndex).markDirty();
+    }
+
+    public int getCookProgressionScaled() {
+        double i = this.delegate.get(0);
+        double j = this.delegate.get(1);
+        return j != 0 && i != 0 ? (int) (i * 24 / j) : 0;
     }
 
     public boolean isHeated() {

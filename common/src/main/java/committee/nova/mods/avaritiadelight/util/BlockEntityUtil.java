@@ -20,22 +20,21 @@ public class BlockEntityUtil {
         accessor.setBlocks(set);
     }
 
-    public static int calcRedstoneFromItemHandler(@Nullable Inventory handler) {
-        if (handler == null) {
-            return 0;
-        } else {
+    public static int calcRedstoneFromInventory(@Nullable Inventory inventory) {
+        if (inventory == null) return 0;
+        else {
             int i = 0;
             float f = 0.0F;
 
-            for (int j = 0; j < handler.size(); ++j) {
-                ItemStack itemstack = handler.getStack(j);
+            for (int j = 0; j < inventory.size(); ++j) {
+                ItemStack itemstack = inventory.getStack(j);
                 if (!itemstack.isEmpty()) {
-                    f += (float) itemstack.getCount() / (float) Math.min(handler.getStack(j).getMaxCount(), itemstack.getMaxCount());
+                    f += (float) itemstack.getCount() / (float) Math.min(inventory.getStack(j).getMaxCount(), itemstack.getMaxCount());
                     ++i;
                 }
             }
 
-            f /= (float) handler.size();
+            f /= (float) inventory.size();
             return MathHelper.floor(f * 14.0F) + (i > 0 ? 1 : 0);
         }
     }

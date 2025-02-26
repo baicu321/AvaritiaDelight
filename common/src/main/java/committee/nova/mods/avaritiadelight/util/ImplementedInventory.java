@@ -26,9 +26,8 @@ public interface ImplementedInventory extends Inventory {
     default boolean isEmpty() {
         for (int i = 0; i < this.size(); i++) {
             ItemStack stack = this.getStack(i);
-            if (!stack.isEmpty()) {
+            if (!stack.isEmpty())
                 return false;
-            }
         }
         return true;
     }
@@ -41,9 +40,7 @@ public interface ImplementedInventory extends Inventory {
     @Override
     default ItemStack removeStack(int slot, int count) {
         ItemStack result = Inventories.splitStack(this.getItems(), slot, count);
-        if (!result.isEmpty()) {
-            this.markDirty();
-        }
+        if (!result.isEmpty()) this.markDirty();
         return result;
     }
 
@@ -55,9 +52,8 @@ public interface ImplementedInventory extends Inventory {
     @Override
     default void setStack(int slot, ItemStack stack) {
         this.getItems().set(slot, stack);
-        if (stack.getCount() > stack.getMaxCount()) {
+        if (stack.getCount() > stack.getMaxCount())
             stack.setCount(stack.getMaxCount());
-        }
     }
 
     @Override

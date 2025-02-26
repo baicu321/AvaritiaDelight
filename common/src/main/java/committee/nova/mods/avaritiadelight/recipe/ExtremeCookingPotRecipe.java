@@ -3,7 +3,6 @@ package committee.nova.mods.avaritiadelight.recipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import com.mojang.serialization.JsonOps;
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
 import committee.nova.mods.avaritiadelight.registry.ADBlocks;
 import net.minecraft.inventory.Inventory;
@@ -22,7 +21,7 @@ import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import java.util.EnumSet;
 
 public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
-    public static final Identifier ID = Identifier.of(AvaritiaDelight.MOD_ID, "extreme_cooking_pot");
+    public static final Identifier ID = Identifier.of(AvaritiaDelight.MOD_ID, "extreme_cooking");
     private final Identifier id;
     private final String group;
     private final CookingPotRecipeBookTab tab;
@@ -172,8 +171,8 @@ public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
                 if (tabKeyIn != null && tabIn == null)
                     AvaritiaDelight.LOGGER.warn("Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: {}", EnumSet.allOf(CookingPotRecipeBookTab.class));
 
-                ItemStack outputIn = ItemStack.CODEC.parse(JsonOps.INSTANCE, JsonHelper.getObject(json, "result")).resultOrPartial(AvaritiaDelight.LOGGER::error).orElse(ItemStack.EMPTY);
-                ItemStack container = JsonHelper.hasElement(json, "container") ? ItemStack.CODEC.parse(JsonOps.INSTANCE, JsonHelper.getObject(json, "container")).resultOrPartial(AvaritiaDelight.LOGGER::error).orElse(ItemStack.EMPTY) : ItemStack.EMPTY;
+                ItemStack outputIn = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));
+                ItemStack container = JsonHelper.hasElement(json, "container") ? ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "container")) : ItemStack.EMPTY;
                 float experienceIn = JsonHelper.getFloat(json, "experience", 0.0F);
                 int cookTimeIn = JsonHelper.getInt(json, "cookingtime", 200);
                 return new ExtremeCookingPotRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
@@ -181,12 +180,12 @@ public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
         }
 
         private static DefaultedList<Ingredient> readIngredients(JsonArray ingredientArray) {
-            DefaultedList<Ingredient> nonnulllist = DefaultedList.of();
+            DefaultedList<Ingredient> ingredients = DefaultedList.of();
             for (int i = 0; i < ingredientArray.size(); ++i) {
                 Ingredient ingredient = Ingredient.fromJson(ingredientArray.get(i));
-                if (!ingredient.isEmpty()) nonnulllist.add(ingredient);
+                if (!ingredient.isEmpty()) ingredients.add(ingredient);
             }
-            return nonnulllist;
+            return ingredients;
         }
 
         @Override

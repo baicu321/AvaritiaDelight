@@ -7,6 +7,7 @@ import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import vectorwing.farmersdelight.common.block.entity.container.CookingPotMenu;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
 public class ExtremeCookingPotScreen extends HandledScreen<ExtremeCookingPotScreenHandler> {
@@ -34,6 +35,8 @@ public class ExtremeCookingPotScreen extends HandledScreen<ExtremeCookingPotScre
         int x = (this.width - 256) / 2;
         int y = (this.height - 256) / 2;
         context.drawTexture(TEXTURE, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight, 512, 512);
+        int l = this.handler.getCookProgressionScaled();
+        context.drawTexture(TEXTURE, x + 172, y + 90, 234, 15, l + 1, 17, 512, 512);
     }
 
     @Override

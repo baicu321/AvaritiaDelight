@@ -111,7 +111,7 @@ public class ExtremeCookingPotBlock extends CookingPotBlock {
     public int getComparatorOutput(BlockState blockState, World level, BlockPos pos) {
         BlockEntity tileEntity = level.getBlockEntity(pos);
         if (tileEntity instanceof ExtremeCookingPotBlockEntity pot)
-            return BlockEntityUtil.calcRedstoneFromItemHandler(pot);
+            return BlockEntityUtil.calcRedstoneFromInventory(pot);
         else
             return 0;
     }
