@@ -95,10 +95,10 @@ public class ExtremeCookingPotBlock extends CookingPotBlock {
         BlockEntity tileEntity = level.getBlockEntity(pos);
         if (tileEntity instanceof ExtremeCookingPotBlockEntity cookingPotEntity) {
             if (cookingPotEntity.isHeated()) {
-                SoundEvent boilSound = !cookingPotEntity.getMeal().isEmpty() ? (SoundEvent) ModSounds.BLOCK_COOKING_POT_BOIL_SOUP.get() : (SoundEvent) ModSounds.BLOCK_COOKING_POT_BOIL.get();
-                double x = (double) pos.getX() + 0.5;
-                double y = (double) pos.getY();
-                double z = (double) pos.getZ() + 0.5;
+                SoundEvent boilSound = !cookingPotEntity.getMeal().isEmpty() ? ModSounds.BLOCK_COOKING_POT_BOIL_SOUP.get() : ModSounds.BLOCK_COOKING_POT_BOIL.get();
+                double x = pos.getX() + 0.5;
+                double y = pos.getY();
+                double z = pos.getZ() + 0.5;
                 if (random.nextInt(10) == 0) {
                     level.playSound(x, y, z, boilSound, SoundCategory.BLOCKS, 0.5F, random.nextFloat() * 0.2F + 0.9F, false);
                 }
