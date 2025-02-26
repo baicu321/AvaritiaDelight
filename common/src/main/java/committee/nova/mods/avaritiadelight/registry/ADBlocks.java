@@ -9,7 +9,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
-import vectorwing.farmersdelight.common.block.StoveBlock;
 
 import java.util.function.Supplier;
 
@@ -22,7 +21,7 @@ public final class ADBlocks {
     public static final RegistrySupplier<Block> CRYSTAL_CABBAGE = registerNoItem("crystal_cabbage", () -> new AvaritiaDelightCropBlock(ADItems.CRYSTAL_CABBAGE_SEEDS));
     public static final RegistrySupplier<Block> NEUTRONIUM_WHEAT = registerNoItem("neutronium_wheat", () -> new AvaritiaDelightCropBlock(ADItems.NEUTRONIUM_WHEAT_SEEDS));
     public static final RegistrySupplier<Block> EXTREME_COOKING_POT = register("extreme_cooking_pot", ExtremeCookingPotBlock::new);
-    public static final RegistrySupplier<Block> EXTREME_STOVE = register("extreme_stove", () -> new StoveBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK)));
+    public static final RegistrySupplier<Block> EXTREME_STOVE = register("extreme_stove", () -> new ExtremeStoveBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK)));
     public static final RegistrySupplier<Block> INFINITY_CABINET = register("infinity_cabinet", () -> new BarrelBlock(AbstractBlock.Settings.copy(Blocks.BARREL)));
     public static final RegistrySupplier<Block> CROP_EXTRACTOR = register("crop_extractor", () -> new HorizontalBlock(AbstractBlock.Settings.create()));
     public static final RegistrySupplier<Block> NEUTRONIUM_HAY_BALE = register("neutronium_hay_bale", () -> new HayBlock(AbstractBlock.Settings.copy(Blocks.HAY_BLOCK)));

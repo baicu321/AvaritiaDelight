@@ -10,7 +10,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import org.slf4j.Logger;
-import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 public final class AvaritiaDelight {
     public static final String MOD_ID = "avaritia_delight";
@@ -23,10 +22,10 @@ public final class AvaritiaDelight {
         ADItemGroups.REGISTRY.register();
         ADRecipes.TYPE_REGISTRY.register();
         ADRecipes.SERIALIZER_REGISTRY.register();
+        ADScreenHandlers.REGISTRY.register();
     }
 
     public static void process() {
-        BlockEntityUtil.appendBlockToType(ModBlockEntityTypes.STOVE.get(), ADBlocks.EXTREME_STOVE.get());
         BlockEntityUtil.appendBlockToType(BlockEntityType.BARREL, ADBlocks.INFINITY_CABINET.get());
         BlockEvent.BREAK.register((world, pos, state, player, intValue) -> {
             BlockState down = world.getBlockState(pos.down());

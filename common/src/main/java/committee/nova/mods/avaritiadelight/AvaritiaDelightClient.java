@@ -10,6 +10,8 @@ public class AvaritiaDelightClient {
     }
 
     public static void process() {
+        ADRenderers.registerBlockEntityRenderers();
         ADRenderers.registerRenderLayers();
+        ADRenderers.registerScreenFactories();
     }
 }
