@@ -7,7 +7,6 @@ import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import vectorwing.farmersdelight.common.block.entity.container.CookingPotMenu;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
 public class ExtremeCookingPotScreen extends HandledScreen<ExtremeCookingPotScreenHandler> {
@@ -32,24 +31,20 @@ public class ExtremeCookingPotScreen extends HandledScreen<ExtremeCookingPotScre
 
     @Override
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-        int x = (this.width - 256) / 2;
-        int y = (this.height - 256) / 2;
-        context.drawTexture(TEXTURE, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight, 512, 512);
+        context.drawTexture(TEXTURE, this.x, this.y, 0, 0, this.backgroundWidth, this.backgroundHeight, 512, 512);
         int l = this.handler.getCookProgressionScaled();
-        context.drawTexture(TEXTURE, x + 172, y + 90, 234, 15, l + 1, 17, 512, 512);
+        context.drawTexture(TEXTURE, this.x + 172, this.y + 90, 234, 15, l + 1, 17, 512, 512);
     }
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        int x = (this.width - 256) / 2;
-        int y = (this.height - 256) / 2;
         boolean heated = this.handler.isHeated();
         this.renderBackground(context);
         super.render(context, mouseX, mouseY, delta);
         if (heated)
-            context.drawTexture(TEXTURE, x + 177, y + 66, 234, 0, 17, 15, 512, 512);
+            context.drawTexture(TEXTURE, this.x + 177, this.y + 66, 234, 0, 17, 15, 512, 512);
         this.drawMouseoverTooltip(context, mouseX, mouseY);
-        if (this.isPointWithinBounds(164, 73, 21, 21, mouseX, mouseY)) {
+        if (this.isPointWithinBounds(174, 63, 21, 21, mouseX, mouseY)) {
             String key = "container.cooking_pot." + (heated ? "heated" : "not_heated");
             context.drawTooltip(this.textRenderer, TextUtils.getTranslation(key, this.handler), mouseX, mouseY);
         }
@@ -57,7 +52,7 @@ public class ExtremeCookingPotScreen extends HandledScreen<ExtremeCookingPotScre
 
     @Override
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
-        context.drawText(this.textRenderer, this.title,  -4,  16, 4210752,false);
-        context.drawText(this.textRenderer, this.playerInventoryTitle,  26,  194, 4210752,false);
+        context.drawText(this.textRenderer, this.title, 7, 6, 4210752, false);
+        context.drawText(this.textRenderer, this.playerInventoryTitle, 37, 184, 4210752, false);
     }
 }

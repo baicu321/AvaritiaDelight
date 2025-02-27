@@ -90,9 +90,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
-        NbtCompound compound = new NbtCompound();
-        Inventories.writeNbt(compound, this.stacks);
-        nbt.put("Items", compound);
+        nbt.put("Items", Inventories.writeNbt(new NbtCompound(), this.stacks));
         if (this.customName != null)
             nbt.putString("CustomName", Text.Serializer.toJson(this.customName));
         nbt.putInt("cookTime", this.cookTime);
@@ -112,7 +110,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
 
     @Override
     public Text getDisplayName() {
-        return this.customName != null ? this.customName : Text.translatable("screen.%s.extreme_cooking_pot".formatted(AvaritiaDelight.MOD_ID));
+        return this.customName != null ? this.customName : Text.translatable("block.%s.extreme_cooking_pot".formatted(AvaritiaDelight.MOD_ID));
     }
 
     @Override

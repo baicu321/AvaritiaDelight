@@ -2,6 +2,8 @@ package committee.nova.mods.avaritiadelight.screen.handler;
 
 import committee.nova.mods.avaritiadelight.item.block.entity.ExtremeCookingPotBlockEntity;
 import committee.nova.mods.avaritiadelight.registry.ADScreenHandlers;
+import committee.nova.mods.avaritiadelight.screen.slot.DisplayOnlySlot;
+import committee.nova.mods.avaritiadelight.screen.slot.TakeOnlySlot;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -40,30 +42,15 @@ public class ExtremeCookingPotScreenHandler extends ScreenHandler {
 
         for (int i = 0; i < 9; ++i)
             for (int l = 0; l < 9; ++l)
-                this.addSlot(new Slot(inventory, l + i * 9, l * 18 - 3, 28 + i * 18));
-        this.addSlot(new Slot(inventory, ExtremeCookingPotBlockEntity.RESULT_SLOT, 195, 100) {
-            @Override
-            public boolean canInsert(ItemStack stack) {
-                return false;
-            }
-
-            @Override
-            public boolean canTakeItems(PlayerEntity playerEntity) {
-                return false;
-            }
-        });//Output
-        this.addSlot(new Slot(inventory, ExtremeCookingPotBlockEntity.CONTAINER_SLOT, 163, 135));//Container
-        this.addSlot(new Slot(inventory, ExtremeCookingPotBlockEntity.RESULT_WITH_CONTAINER_SLOT, 195, 135) {
-            @Override
-            public boolean canInsert(ItemStack stack) {
-                return false;
-            }
-        });//Final
+                this.addSlot(new Slot(inventory, l + i * 9, 8 + l * 18, 18 + i * 18));
+        this.addSlot(new DisplayOnlySlot(inventory, ExtremeCookingPotBlockEntity.RESULT_SLOT, 206, 90));//Output
+        this.addSlot(new Slot(inventory, ExtremeCookingPotBlockEntity.CONTAINER_SLOT, 174, 125));//Container
+        this.addSlot(new TakeOnlySlot(inventory, ExtremeCookingPotBlockEntity.RESULT_WITH_CONTAINER_SLOT, 206, 125));//Final
         for (int i = 0; i < 3; ++i)
             for (int l = 0; l < 9; ++l)
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 28 + l * 18, 206 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 39 + l * 18, 196 + i * 18));
         for (int i = 0; i < 9; ++i)
-            this.addSlot(new Slot(playerInventory, i, 28 + i * 18, 264));
+            this.addSlot(new Slot(playerInventory, i, 39 + i * 18, 254));
         this.inventory.markDirty();
     }
 

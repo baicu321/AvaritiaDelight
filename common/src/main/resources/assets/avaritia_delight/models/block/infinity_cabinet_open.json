@@ -1,8 +1,8 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "parent": "minecraft:block/orientable",
   "textures": {
-    "bottom": "avaritia_delight:block/infinity_cabinet_side",
+    "front": "avaritia_delight:block/infinity_cabinet_front_open",
     "side": "avaritia_delight:block/infinity_cabinet_side",
-    "top": "avaritia_delight:block/infinity_cabinet_front_open"
+    "top": "avaritia_delight:block/infinity_cabinet_side"
   }
 }

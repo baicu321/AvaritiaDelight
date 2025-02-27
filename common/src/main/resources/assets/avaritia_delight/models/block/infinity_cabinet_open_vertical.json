@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "avaritia_delight:block/infinity_cabinet_front_open",
+    "side": "avaritia_delight:block/infinity_cabinet_side"
+  }
+}
