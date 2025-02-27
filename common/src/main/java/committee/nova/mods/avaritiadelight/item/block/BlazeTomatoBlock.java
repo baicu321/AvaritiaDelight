@@ -8,15 +8,17 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.TomatoVineBlock;
-import vectorwing.farmersdelight.common.registry.ModSounds;
 
 public class BlazeTomatoBlock extends TomatoVineBlock {
     public BlazeTomatoBlock() {
@@ -32,7 +34,7 @@ public class BlazeTomatoBlock extends TomatoVineBlock {
         else if (isMature) {
             int quantity = 1 + world.random.nextInt(2);
             Block.dropStack(world, pos, new ItemStack(ADItems.BLAZE_TOMATO.get(), quantity));
-            world.playSound(null, pos, ModSounds.ITEM_TOMATO_PICK_FROM_BUSH.get(), SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
+            world.playSound(null, pos, Registries.SOUND_EVENT.get(Identifier.of(FarmersDelight.MODID, "block.tomato_bush.pick_tomatoes")), SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, state.with(this.getAgeProperty(), 0), 2);
             return ActionResult.SUCCESS;
         } else

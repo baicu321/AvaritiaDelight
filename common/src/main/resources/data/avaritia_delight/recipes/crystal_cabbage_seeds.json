@@ -1,0 +1,28 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "I": {
+      "item": "avaritia:crystal_matrix_ingot"
+    },
+    "L": {
+      "item": "avaritia:diamond_lattice"
+    },
+    "S": {
+      "item": "farmersdelight:cabbage_seeds"
+    }
+  },
+  "pattern": [
+    "   I   ",
+    " L   L ",
+    "  I I  ",
+    "I  S  I",
+    "  I I  ",
+    " L   L ",
+    "   I   "
+  ],
+  "result": {
+    "item": "avaritia_delight:crystal_cabbage_seeds"
+  },
+  "show_notification": true,
+  "tier": 3
+}

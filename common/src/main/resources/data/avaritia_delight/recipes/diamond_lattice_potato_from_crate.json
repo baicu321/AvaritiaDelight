@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "avaritia_delight:diamond_lattice_potato_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "avaritia_delight:diamond_lattice_potato"
+  }
+}

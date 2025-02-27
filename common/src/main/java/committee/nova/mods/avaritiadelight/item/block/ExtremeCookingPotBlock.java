@@ -13,6 +13,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
@@ -20,6 +21,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -27,9 +29,9 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.CookingPotBlock;
 import vectorwing.farmersdelight.common.block.state.CookingPotSupport;
-import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class ExtremeCookingPotBlock extends CookingPotBlock {
@@ -57,10 +59,8 @@ public class ExtremeCookingPotBlock extends CookingPotBlock {
                     level.playSound(null, pos, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 } else MenuRegistry.openExtendedMenu(serverPlayer, cookingPotEntity);
             }
-
             return ActionResult.SUCCESS;
         }
-
         return ActionResult.SUCCESS;
     }
 
@@ -83,11 +83,9 @@ public class ExtremeCookingPotBlock extends CookingPotBlock {
     public void onPlaced(World level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         if (stack.hasCustomName()) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof ExtremeCookingPotBlockEntity pot) {
+            if (blockEntity instanceof ExtremeCookingPotBlockEntity pot)
                 pot.setCustomName(stack.getName());
-            }
         }
-
     }
 
     @Override
@@ -95,16 +93,14 @@ public class ExtremeCookingPotBlock extends CookingPotBlock {
         BlockEntity tileEntity = level.getBlockEntity(pos);
         if (tileEntity instanceof ExtremeCookingPotBlockEntity cookingPotEntity) {
             if (cookingPotEntity.isHeated()) {
-                SoundEvent boilSound = !cookingPotEntity.getMeal().isEmpty() ? ModSounds.BLOCK_COOKING_POT_BOIL_SOUP.get() : ModSounds.BLOCK_COOKING_POT_BOIL.get();
+                SoundEvent boilSound = Registries.SOUND_EVENT.get(Identifier.of(FarmersDelight.MODID, cookingPotEntity.getMeal().isEmpty() ? "block.cooking_pot.boil" : "block.cooking_pot.boil_soup"));
                 double x = pos.getX() + 0.5;
                 double y = pos.getY();
                 double z = pos.getZ() + 0.5;
-                if (random.nextInt(10) == 0) {
+                if (random.nextInt(10) == 0)
                     level.playSound(x, y, z, boilSound, SoundCategory.BLOCKS, 0.5F, random.nextFloat() * 0.2F + 0.9F, false);
-                }
             }
         }
-
     }
 
     @Override

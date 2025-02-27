@@ -13,20 +13,22 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.*;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.CampfireCookingRecipe;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.StoveBlock;
-import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.utility.MathUtils;
 
 import java.util.Optional;
@@ -94,7 +96,7 @@ public class ExtremeStoveBlock extends StoveBlock {
             double y = pos.getY();
             double z = pos.getZ() + 0.5;
             if (rand.nextInt(10) == 0)
-                level.playSound(x, y, z, ModSounds.BLOCK_STOVE_CRACKLE.get(), SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+                level.playSound(x, y, z, Registries.SOUND_EVENT.get(Identifier.of(FarmersDelight.MODID, "block.stove.crackle")), SoundCategory.BLOCKS, 1.0F, 1.0F, false);
 
             Direction direction = stateIn.get(HorizontalFacingBlock.FACING);
             Direction.Axis direction$axis = direction.getAxis();

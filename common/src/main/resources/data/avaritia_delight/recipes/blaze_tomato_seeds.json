@@ -1,0 +1,29 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "S": {
+      "item": "minecraft:soul_sand"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
+    },
+    "C": {
+      "item": "avaritia:blaze_cube"
+    },
+    "D": {
+      "item": "farmersdelight:tomato_seeds"
+    }
+  },
+  "pattern": [
+    " SFS ",
+    "SCCCS",
+    "FCDCF",
+    "SCCCS",
+    " SFS "
+  ],
+  "result": {
+    "item": "avaritia_delight:blaze_tomato_seeds"
+  },
+  "show_notification": true,
+  "tier": 2
+}

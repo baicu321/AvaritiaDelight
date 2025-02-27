@@ -1,0 +1,24 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "avaritia:diamond_lattice"
+    },
+    "P": {
+      "item": "minecraft:potato"
+    }
+  },
+  "pattern": [
+    "GDG",
+    "DPD",
+    "GDG"
+  ],
+  "result": {
+    "item": "avaritia_delight:diamond_lattice_potato"
+  },
+  "show_notification": true,
+  "tier": 1
+}
