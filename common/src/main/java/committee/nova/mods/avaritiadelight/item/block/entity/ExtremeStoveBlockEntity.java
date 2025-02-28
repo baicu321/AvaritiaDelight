@@ -1,6 +1,7 @@
 package committee.nova.mods.avaritiadelight.item.block.entity;
 
 import committee.nova.mods.avaritiadelight.registry.ADBlockEntities;
+import committee.nova.mods.avaritiadelight.registry.ADItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.Inventories;
@@ -127,7 +128,13 @@ public class ExtremeStoveBlockEntity extends SyncedBlockEntity {
                 ItemStack stoveStack = this.stacks.get(i);
                 if (!stoveStack.isEmpty()) {
                     this.cookingTimes[i]++;
-                    if (this.cookingTimes[i] >= 20) {
+                    if (stoveStack.isOf(ADItems.COSMIC_BEEF.get())) {
+                        if (this.cookingTimes[i] >= 10 * 20) {
+                            ItemUtils.spawnItemEntity(this.world, new ItemStack(ADItems.COSMIC_BEEF_COOKED.get()), (double) this.pos.getX() + 0.5, (double) this.pos.getY() + 1.0, (double) this.pos.getZ() + 0.5, this.world.random.nextGaussian() * 0.009999999776482582, 0.10000000149011612, this.world.random.nextGaussian() * 0.009999999776482582);
+                            this.stacks.set(i, ItemStack.EMPTY);
+                            didInventoryChange = true;
+                        }
+                    } else if (this.cookingTimes[i] >= 20) {
                         Inventory inventoryWrapper = new SimpleInventory(stoveStack);
                         Optional<CampfireCookingRecipe> recipe = this.getMatchingRecipe(inventoryWrapper, i);
                         if (recipe.isPresent()) {

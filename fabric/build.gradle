@@ -38,6 +38,9 @@ dependencies {
 
     modImplementation "maven.modrinth:re-avaritia:$rootProject.avaritia_fabric_version"
     modImplementation "maven.modrinth:farmers-delight-refabricated:$rootProject.delight_fabric_version"
+
+    for (String module in rootProject.port_lib_modules.split(","))
+        modRuntimeOnly "io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version+$minecraft_version"
 }
 
 processResources {

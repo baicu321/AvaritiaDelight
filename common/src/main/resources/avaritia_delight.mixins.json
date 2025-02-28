@@ -6,6 +6,7 @@
   "client": [
   ],
   "mixins": [
+    "CuttingBoardBlockEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

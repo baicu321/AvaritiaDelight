@@ -1,7 +1,9 @@
 package committee.nova.mods.avaritiadelight.item.block;
 
+import committee.nova.mods.avaritiadelight.AvaritiaDelight;
 import committee.nova.mods.avaritiadelight.item.block.entity.ExtremeStoveBlockEntity;
 import committee.nova.mods.avaritiadelight.registry.ADBlockEntities;
+import committee.nova.mods.avaritiadelight.registry.ADItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -13,6 +15,8 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.*;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.CampfireCookingRecipe;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.book.CookingRecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.sound.SoundCategory;
@@ -79,6 +83,9 @@ public class ExtremeStoveBlock extends StoveBlock {
             int stoveSlot = stoveEntity.getNextEmptySlot();
             if (stoveSlot < 0 || stoveEntity.isStoveBlockedAbove())
                 return ActionResult.PASS;
+            if (heldStack.isOf(ADItems.COSMIC_BEEF.get()))// This recipe don't have effect, just a placeholder
+                if (!level.isClient && stoveEntity.addItem(player.getAbilities().creativeMode ? heldStack.copy() : heldStack, new CampfireCookingRecipe(Identifier.of(AvaritiaDelight.MOD_ID, "cosmic_beef_cooked"), "misc", CookingRecipeCategory.FOOD, Ingredient.ofItems(ADItems.COSMIC_BEEF.get()), new ItemStack(ADItems.COSMIC_BEEF_COOKED.get()), 0, 10 * 20), stoveSlot))
+                    return ActionResult.SUCCESS;
             Optional<CampfireCookingRecipe> recipe = stoveEntity.getMatchingRecipe(new SimpleInventory(heldStack), stoveSlot);
             if (recipe.isPresent()) {
                 if (!level.isClient && stoveEntity.addItem(player.getAbilities().creativeMode ? heldStack.copy() : heldStack, recipe.get(), stoveSlot))
