@@ -1,6 +1,14 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "avaritia_delight:item/slice_of_endless_cake"
+    "layer0": "avaritia_delight:item/slice_of_endless_cake",
+    "halo": "avaritia:misc/halo"
+  },
+  "loader": "avaritia:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -16777216,
+    "size": 6,
+    "pulse": false
   }
 }
