@@ -11,7 +11,7 @@ import java.util.List;
 
 public class HowDidWeGetHereItem extends Item {
     public HowDidWeGetHereItem() {
-        super(EffectUtil.applyEffects(new Settings().arch$tab(ADItemGroups.MAIN), List.of(
+        super(EffectUtil.applyEffects(new Settings().maxCount(1).arch$tab(ADItemGroups.MAIN), List.of(
                 StatusEffects.ABSORPTION,
                 StatusEffects.BAD_OMEN,
                 StatusEffects.BLINDNESS,

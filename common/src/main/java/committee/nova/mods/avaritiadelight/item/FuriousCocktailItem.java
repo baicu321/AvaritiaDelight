@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FuriousCocktailItem extends Item {
     public FuriousCocktailItem() {
-        super(EffectUtil.applyEffects(new Settings().arch$tab(ADItemGroups.MAIN), List.of(
+        super(EffectUtil.applyEffects(new Settings().maxCount(1).arch$tab(ADItemGroups.MAIN), List.of(
                 StatusEffects.FIRE_RESISTANCE,
                 StatusEffects.INVISIBILITY,
                 StatusEffects.JUMP_BOOST,

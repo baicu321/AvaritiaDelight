@@ -17,8 +17,8 @@ public final class ADItems {
 
     public static final RegistrySupplier<Item> BLAZE_KNIFE = register("blaze_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.GOLD));
     public static final RegistrySupplier<Item> CRYSTAL_KNIFE = register("crystal_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.DIAMOND));
-    public static final RegistrySupplier<Item> INFINITY_KNIFE = register("infinity_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.NETHERITE));
     public static final RegistrySupplier<Item> NEUTRONIUM_KNIFE = register("neutronium_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.NETHERITE));
+    public static final RegistrySupplier<Item> INFINITY_KNIFE = register("infinity_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.NETHERITE));
 
     public static final RegistrySupplier<Item> BLAZE_TOMATO_SEEDS = register("blaze_tomato_seeds", () -> new AliasedBlockItem(ADBlocks.BUDDING_BLAZE_TOMATO.get(), new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> CRYSTAL_CABBAGE_SEEDS = register("crystal_cabbage_seeds", () -> new AliasedBlockItem(ADBlocks.CRYSTAL_CABBAGE.get(), new Item.Settings().arch$tab(ADItemGroups.MAIN)));

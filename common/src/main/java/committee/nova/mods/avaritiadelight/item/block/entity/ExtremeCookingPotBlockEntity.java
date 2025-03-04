@@ -48,8 +48,8 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         @Override
         public int get(int index) {
             return switch (index) {
-                case 0 -> cookTime;
-                case 1 -> cookTimeTotal;
+                case 0 -> ExtremeCookingPotBlockEntity.this.cookTime;
+                case 1 -> ExtremeCookingPotBlockEntity.this.cookTimeTotal;
                 default -> throw new IllegalStateException("Unexpected value: " + index);
             };
         }
@@ -58,9 +58,9 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         public void set(int index, int value) {
             switch (index) {
                 case 0:
-                    cookTime = value;
+                    ExtremeCookingPotBlockEntity.this.cookTime = value;
                 case 1:
-                    cookTimeTotal = value;
+                    ExtremeCookingPotBlockEntity.this.cookTimeTotal = value;
             }
         }
 
@@ -186,6 +186,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
 
     protected boolean canCook(ExtremeCookingPotRecipe recipe) {
         if (this.hasInput()) {
+            assert this.world != null;
             ItemStack resultStack = recipe.getOutput(this.world.getRegistryManager());
             if (resultStack.isEmpty())
                 return false;

@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "avaritia_delight:diamond_lattice_potato"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "avaritia_delight:diamond_lattice_fries"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

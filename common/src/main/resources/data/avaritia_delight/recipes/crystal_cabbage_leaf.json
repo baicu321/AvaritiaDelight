@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "avaritia_delight:crystal_cabbage"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "avaritia_delight:crystal_cabbage_leaf"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

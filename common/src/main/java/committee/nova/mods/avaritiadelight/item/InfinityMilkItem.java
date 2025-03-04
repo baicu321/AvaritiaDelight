@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 public class InfinityMilkItem extends MilkBucketItem {
     public InfinityMilkItem() {
-        super(new Settings().arch$tab(ADItemGroups.MAIN));
+        super(new Settings().maxCount(1).arch$tab(ADItemGroups.MAIN));
     }
 
     @Override
