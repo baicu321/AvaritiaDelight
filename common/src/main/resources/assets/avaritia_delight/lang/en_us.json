@@ -14,6 +14,7 @@
   "block.avaritia_delight.neutronium_wheat": "Neutronium Wheat",
   "block.avaritia_delight.soul_rich_soil": "Soul Rich Soil",
   "block.avaritia_delight.soul_rich_soil_farmland": "Soul Rich Soil Farmland",
+  "emi.category.avaritia_delight.extreme_cooking": "Extreme Cooking",
   "item.avaritia_delight.blaze_knife": "Blaze Knife",
   "item.avaritia_delight.blaze_tomato": "Blaze Tomato",
   "item.avaritia_delight.blaze_tomato_sauce": "Blaze Tomato Sauce",
@@ -40,5 +41,6 @@
   "item.avaritia_delight.pasta_with_cosmic_meatballs": "Pasta With Cosmic Meatballs",
   "item.avaritia_delight.raw_crystal_pasta": "Raw Crystal Pasta",
   "item.avaritia_delight.slice_of_endless_cake": "Slice Of Endless Cake",
-  "itemGroup.avaritia_delight.main": "Avaritia's Delight"
+  "itemGroup.avaritia_delight.main": "Avaritia's Delight",
+  "jei.category.avaritia_delight.extreme_cooking": "Extreme Cooking"
 }

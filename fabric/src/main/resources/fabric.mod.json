@@ -3,7 +3,7 @@
   "id": "avaritia_delight",
   "version": "${version}",
   "name": "Avaritia's Delight",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Do you want to eat some avarita food?",
   "authors": [
     "IAFEnvoy"
   ],
@@ -19,6 +19,12 @@
     ],
     "client": [
       "committee.nova.mods.avaritiadelight.fabric.client.AvaritiaDelightFabricClient"
+    ],
+    "jei_mod_plugin": [
+      "committee.nova.mods.avaritiadelight.compat.jei.ADJeiPlugin"
+    ],
+    "emi": [
+      "committee.nova.mods.avaritiadelight.compat.emi.ADEmiPlugin"
     ]
   },
   "mixins": [

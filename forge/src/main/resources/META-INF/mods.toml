@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "Avaritia's Delight"
 authors = "IAFEnvoy"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Do you want to eat some avarita food?
 '''
 logoFile = "logo.png"
 

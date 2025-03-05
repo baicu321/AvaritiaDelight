@@ -21,7 +21,7 @@ import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import java.util.EnumSet;
 
 public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
-    public static final Identifier ID = Identifier.of(AvaritiaDelight.MOD_ID, "extreme_cooking");
+    public static final Identifier ID = new Identifier(AvaritiaDelight.MOD_ID, "extreme_cooking");
     private final Identifier id;
     private final String group;
     private final CookingPotRecipeBookTab tab;
