@@ -14,10 +14,13 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.Registries;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Nameable;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -26,11 +29,11 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.CookingPotBlock;
 import vectorwing.farmersdelight.common.block.entity.CookingPotBlockEntity;
 import vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity;
 import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
-import vectorwing.farmersdelight.common.registry.ModParticleTypes;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 import java.util.Optional;
@@ -310,7 +313,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
                 y = (double) pos.getY() + 0.5;
                 z = (double) pos.getZ() + 0.5 + (random.nextDouble() * 0.4 - 0.2);
                 double motionY = random.nextBoolean() ? 0.015 : 0.005;
-                level.addParticle(ModParticleTypes.STEAM.get(), x, y, z, 0.0, motionY, 0.0);
+                level.addParticle((DefaultParticleType) Registries.PARTICLE_TYPE.get(Identifier.of(FarmersDelight.MODID, "steam")), x, y, z, 0.0, motionY, 0.0);
             }
         }
     }

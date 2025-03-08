@@ -1,0 +1,28 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "I": {
+      "item": "avaritia:crystal_matrix_ingot"
+    },
+    "N": {
+      "item": "avaritia:neutron_ingot"
+    },
+    "B": {
+      "item": "avaritia:crystal_matrix"
+    }
+  },
+  "pattern": [
+    "     IB",
+    "   IIB ",
+    "  IIB  ",
+    " IIB   ",
+    "   I   ",
+    " N     ",
+    "B      "
+  ],
+  "result": {
+    "item": "avaritia_delight:crystal_knife"
+  },
+  "show_notification": true,
+  "tier": 3
+}

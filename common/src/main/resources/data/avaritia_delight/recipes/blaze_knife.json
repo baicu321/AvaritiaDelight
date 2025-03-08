@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "P": {
+      "item": "minecraft:blaze_powder"
+    },
+    "C": {
+      "item": "avaritia:blaze_cube"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "S": {
+      "item": "minecraft:soul_sand"
+    },
+    "D": {
+      "item": "avaritia:diamond_lattice"
+    }
+  },
+  "pattern": [
+    "  PCB",
+    " PCB ",
+    "PCB  ",
+    " S   ",
+    "D    "
+  ],
+  "result": {
+    "item": "avaritia_delight:blaze_knife"
+  },
+  "show_notification": true,
+  "tier": 2
+}
