@@ -4,6 +4,7 @@ import committee.nova.mods.avaritiadelight.AvaritiaDelight;
 import committee.nova.mods.avaritiadelight.registry.ADBlockEntities;
 import committee.nova.mods.avaritiadelight.screen.handler.InfinityCabinetScreenHandler;
 import committee.nova.mods.avaritiadelight.util.ImplementedInventory;
+import committee.nova.mods.avaritiadelight.util.InventoryHelper;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -28,14 +29,14 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class InfinityCabinetBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory, Nameable {
-    private final ViewerCountManager stateManager;
+    private final ViewerCountManager viewerCountManager;
     private final DefaultedList<ItemStack> stacks = DefaultedList.ofSize(243, ItemStack.EMPTY);
     @Nullable
     private Text customName = null;
 
     public InfinityCabinetBlockEntity(BlockPos pos, BlockState state) {
         super(ADBlockEntities.INFINITY_CABINET.get(), pos, state);
-        this.stateManager = new ViewerCountManager() {
+        this.viewerCountManager = new ViewerCountManager() {
             @Override
             protected void onContainerOpen(World world, BlockPos pos, BlockState state) {
                 InfinityCabinetBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
@@ -63,14 +64,14 @@ public class InfinityCabinetBlockEntity extends BlockEntity implements NamedScre
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         this.stacks.clear();
-        Inventories.readNbt(nbt.getCompound("Items"), this.stacks);
+        InventoryHelper.readNbt(nbt.getCompound("Items"), this.stacks);
         if (nbt.contains("CustomName")) this.customName = Text.Serializer.fromJson(nbt.getString("CustomName"));
     }
 
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
-        nbt.put("Items", Inventories.writeNbt(new NbtCompound(), this.stacks));
+        nbt.put("Items", InventoryHelper.writeNbt(new NbtCompound(), this.stacks));
         if (this.customName != null) nbt.putString("CustomName", Text.Serializer.toJson(this.customName));
     }
 
@@ -111,18 +112,18 @@ public class InfinityCabinetBlockEntity extends BlockEntity implements NamedScre
     @Override
     public void onOpen(PlayerEntity player) {
         if (!this.removed && !player.isSpectator())
-            this.stateManager.openContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
+            this.viewerCountManager.openContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
     }
 
     @Override
     public void onClose(PlayerEntity player) {
         if (!this.removed && !player.isSpectator())
-            this.stateManager.closeContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
+            this.viewerCountManager.closeContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
     }
 
     public void tick() {
         if (!this.removed)
-            this.stateManager.updateViewerCount(this.getWorld(), this.getPos(), this.getCachedState());
+            this.viewerCountManager.updateViewerCount(this.getWorld(), this.getPos(), this.getCachedState());
     }
 
     private void setOpen(BlockState state, boolean open) {

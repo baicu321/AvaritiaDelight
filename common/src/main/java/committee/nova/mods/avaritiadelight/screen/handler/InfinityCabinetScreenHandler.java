@@ -15,7 +15,12 @@ public class InfinityCabinetScreenHandler extends ScreenHandler {
     private final PlayerInventory playerInventory;
 
     public InfinityCabinetScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, new SimpleInventory(243), playerInventory);
+        this(syncId, new SimpleInventory(243) {
+            @Override
+            public int getMaxCountPerStack() {
+                return Integer.MAX_VALUE;
+            }
+        }, playerInventory);
     }
 
     public InfinityCabinetScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory) {
@@ -46,7 +51,7 @@ public class InfinityCabinetScreenHandler extends ScreenHandler {
             if (this.inventory.size() <= invSlot && invSlot < this.inventory.size() + this.playerInventory.size()) {
                 if (!this.insertItem(originalStack, 0, this.inventory.size(), false))
                     return ItemStack.EMPTY;
-            } else if (!this.insertItem(originalStack, this.inventory.size(), this.inventory.size() + this.playerInventory.size(), false))
+            } else if (!this.insertItem(originalStack, this.inventory.size(), this.inventory.size() + 36, false))
                 return ItemStack.EMPTY;
             if (originalStack.isEmpty())
                 slot.setStack(ItemStack.EMPTY);
@@ -69,5 +74,66 @@ public class InfinityCabinetScreenHandler extends ScreenHandler {
     public void onClosed(PlayerEntity player) {
         super.onClosed(player);
         this.inventory.onClose(player);
+    }
+
+    @Override
+    protected boolean insertItem(ItemStack stack, int startIndex, int endIndex, boolean fromLast) {
+        boolean bl = false;
+        int i = startIndex;
+        if (fromLast)
+            i = endIndex - 1;
+        Slot slot;
+        ItemStack itemStack;
+        if (stack.isStackable()) {
+            while (!stack.isEmpty()) {
+                if (fromLast) {
+                    if (i < startIndex) break;
+                } else if (i >= endIndex) break;
+                slot = this.slots.get(i);
+                itemStack = slot.getStack();
+                if (!itemStack.isEmpty() && ItemStack.canCombine(stack, itemStack)) {
+                    int maxCount = i >= this.inventory.size() ? 64 : Integer.MAX_VALUE;
+                    long j = (long) itemStack.getCount() + stack.getCount();//Use long to prevent overflow
+                    if (j <= maxCount) {
+                        stack.setCount(0);
+                        itemStack.setCount((int) j);
+                        slot.markDirty();
+                        bl = true;
+                    } else if (itemStack.getCount() < maxCount) {
+                        stack.decrement(maxCount - itemStack.getCount());
+                        itemStack.setCount(maxCount);
+                        slot.markDirty();
+                        bl = true;
+                    }
+                }
+                if (fromLast) --i;
+                else ++i;
+            }
+        }
+
+        if (!stack.isEmpty()) {
+            if (fromLast) i = endIndex - 1;
+            else i = startIndex;
+            while (true) {
+                if (fromLast) {
+                    if (i < startIndex) break;
+                } else if (i >= endIndex) break;
+                slot = this.slots.get(i);
+                itemStack = slot.getStack();
+                if (itemStack.isEmpty() && slot.canInsert(stack)) {
+                    if (stack.getCount() > slot.getMaxItemCount())
+                        slot.setStack(stack.split(slot.getMaxItemCount()));
+                    else
+                        slot.setStack(stack.split(stack.getCount()));
+
+                    slot.markDirty();
+                    bl = true;
+                    break;
+                }
+                if (fromLast) --i;
+                else ++i;
+            }
+        }
+        return bl;
     }
 }
