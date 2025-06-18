@@ -1,0 +1,42 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "N": {
+      "item": "avaritia:neutron_pile"
+    },
+    "B": {
+      "item": "avaritia_delight:neutronium_bread"
+    },
+    "P": {
+      "item": "avaritia_delight:diamond_lattice_potato"
+    },
+    "C": {
+      "item": "avaritia_delight:crystal_cabbage_leaf"
+    },
+    ".": {
+      "item": "avaritia_delight:cosmic_beef_cooked"
+    },
+    "M": {
+      "item": "avaritia:cosmic_meatballs"
+    },
+    "S": {
+      "item": "avaritia_delight:blaze_tomato_sauce"
+    }
+  },
+  "pattern": [
+    "    NN   ",
+    "   NBBN  ",
+    "  NBSC.N ",
+    " NBP.SCBN",
+    "NBS.M.SBN",
+    "NBCS.PBN ",
+    " N.CSBN  ",
+    "  NBBN   ",
+    "   NN    "
+  ],
+  "result": {
+    "item": "avaritia_delight:infinity_taco"
+  },
+  "show_notification": true,
+  "tier": 4
+}

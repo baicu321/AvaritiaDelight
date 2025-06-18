@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "avaritia:cosmic_meatballs"
+    }
+  ],
+  "result": [
+    {
+      "item": "avaritia_delight:cosmic_beef"
+    }
+  ],
+  "tool": {
+    "item": "avaritia:infinity_pickaxe"
+  }
+}

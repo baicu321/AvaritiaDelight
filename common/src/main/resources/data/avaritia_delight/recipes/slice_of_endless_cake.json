@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "avaritia:endless_cake"
+    }
+  ],
+  "result": [
+    {
+      "count": 7,
+      "item": "avaritia_delight:slice_of_endless_cake"
+    }
+  ],
+  "tool": {
+    "tag": "avaritia_delight:knives"
+  }
+}

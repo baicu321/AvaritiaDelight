@@ -41,6 +41,8 @@ public final class ADItems {
     public static final RegistrySupplier<Item> NEUTRONIUM_WHEAT_DOUGH = register("neutronium_wheat_dough", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> PASTA_WITH_COSMIC_MEATBALLS = register("pasta_with_cosmic_meatballs", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> SLICE_OF_ENDLESS_CAKE = register("slice_of_endless_cake", SliceOfEndlessCakeItem::new);
+    public static final RegistrySupplier<Item> NEUTRONIUM_BOWL = register("neutronium_bowl", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> NEUTRONIUM_BREAD = register("neutronium_bread", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
 
     public static final RegistrySupplier<Item> FURIOUS_COCKTAIL = register("furious_cocktail", FuriousCocktailItem::new);
     public static final RegistrySupplier<Item> HOW_DID_WE_GET_HERE = register("how_did_we_get_here", HowDidWeGetHereItem::new);

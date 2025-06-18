@@ -1,0 +1,54 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "N": {
+      "item": "avaritia:neutron"
+    },
+    "C": {
+      "item": "avaritia:crystal_matrix"
+    },
+    "D": {
+      "item": "avaritia:diamond_lattice_block"
+    },
+    ".": {
+      "item": "avaritia:crystal_matrix_ingot"
+    },
+    "E": {
+      "item": "avaritia:extreme_crafting_table"
+    },
+    "I": {
+      "item": "avaritia:infinity_catalyst"
+    },
+    "S": {
+      "item": "farmersdelight:stove"
+    },
+    "F": {
+      "item": "avaritia:star_fuel"
+    },
+    "A": {
+      "item": "avaritia:star_fuel_block"
+    },
+    "B": {
+      "item": "avaritia:blaze_cube"
+    },
+    "_": {
+      "item": "avaritia:blaze_cube_block"
+    }
+  },
+  "pattern": [
+    "NNNNNNNNN",
+    "CCDDDDDCC",
+    "CDD...DDC",
+    "CD.ISI.DC",
+    "CD.SES.DC",
+    "CD.ISI.DC",
+    "CD.FFF.DC",
+    "CBFAAAFBC",
+    "CB_____BC"
+  ],
+  "result": {
+    "item": "avaritia_delight:extreme_stove"
+  },
+  "show_notification": true,
+  "tier": 4
+}

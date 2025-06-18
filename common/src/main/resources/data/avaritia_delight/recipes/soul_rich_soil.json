@@ -1,0 +1,35 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "N": {
+      "item": "avaritia:neutron_pile"
+    },
+    "C": {
+      "item": "avaritia:blaze_cube"
+    },
+    "S": {
+      "item": "minecraft:soul_soil"
+    },
+    "B": {
+      "item": "minecraft:bone_meal"
+    },
+    "W": {
+      "item": "minecraft:nether_wart"
+    },
+    "E": {
+      "item": "farmersdelight:rich_soil"
+    }
+  },
+  "pattern": [
+    "NNNNC",
+    "SSSSC",
+    "BBBBC",
+    "WWWWC",
+    "EEEEC"
+  ],
+  "result": {
+    "item": "avaritia_delight:soul_rich_soil"
+  },
+  "show_notification": true,
+  "tier": 2
+}

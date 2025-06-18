@@ -1,0 +1,26 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "N": {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    "D": {
+      "item": "avaritia:diamond_lattice"
+    }
+  },
+  "pattern": [
+    "       ",
+    "   N   ",
+    "  NNN  ",
+    " NNDNN ",
+    "  NNN  ",
+    "   N   ",
+    "       "
+  ],
+  "result": {
+    "item": "avaritia_delight:neutronium_wheat_dough",
+    "count": 12
+  },
+  "show_notification": true,
+  "tier": 3
+}

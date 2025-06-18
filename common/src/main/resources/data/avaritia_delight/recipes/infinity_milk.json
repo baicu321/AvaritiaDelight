@@ -1,0 +1,24 @@
+{
+  "type": "avaritia_delight:extreme_cooking",
+  "category": "meals",
+  "ingredients": [
+    {
+      "item": "avaritia:upgrade_smithing_template"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "avaritia:eternal_singularity"
+    },
+    {
+      "item": "avaritia:enhancement_core"
+    }
+  ],
+  "result": {
+    "item": "avaritia_delight:infinity_milk"
+  }
+}

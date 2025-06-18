@@ -1,0 +1,23 @@
+{
+  "type": "avaritia:extreme_smithing",
+  "addition": [
+    {
+      "item": "avaritia:neutron"
+    },
+    {
+      "item": "avaritia:enhancement_core"
+    },
+    {
+      "item": "avaritia:infinity"
+    }
+  ],
+  "base": {
+    "item": "farmersdelight:oak_cabinet"
+  },
+  "result": {
+    "item": "avaritia_delight:infinity_cabinet"
+  },
+  "template": {
+    "item": "avaritia:upgrade_smithing_template"
+  }
+}
