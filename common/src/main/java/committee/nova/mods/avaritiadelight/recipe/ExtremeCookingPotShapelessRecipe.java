@@ -20,8 +20,8 @@ import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 
 import java.util.EnumSet;
 
-public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
-    public static final Identifier ID = new Identifier(AvaritiaDelight.MOD_ID, "extreme_cooking");
+public class ExtremeCookingPotShapelessRecipe implements Recipe<Inventory> {
+    public static final Identifier ID = new Identifier(AvaritiaDelight.MOD_ID, "extreme_cooking_shapeless");
     private final Identifier id;
     private final String group;
     private final CookingPotRecipeBookTab tab;
@@ -31,7 +31,7 @@ public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
     private final float experience;
     private final int cookTime;
 
-    public ExtremeCookingPotRecipe(Identifier id, String group, @Nullable CookingPotRecipeBookTab tab, DefaultedList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
+    public ExtremeCookingPotShapelessRecipe(Identifier id, String group, @Nullable CookingPotRecipeBookTab tab, DefaultedList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
         this.id = id;
         this.group = group;
         this.tab = tab;
@@ -127,7 +127,7 @@ public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        return o instanceof ExtremeCookingPotRecipe that &&
+        return o instanceof ExtremeCookingPotShapelessRecipe that &&
                 Float.compare(that.getExperience(), this.getExperience()) == 0 &&
                 this.getCookTime() == that.getCookTime() &&
                 this.getId().equals(that.getId()) &&
@@ -151,15 +151,15 @@ public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
         return result;
     }
 
-    public enum Type implements RecipeType<ExtremeCookingPotRecipe> {
+    public enum Type implements RecipeType<ExtremeCookingPotShapelessRecipe> {
         INSTANCE
     }
 
-    public enum Serializer implements RecipeSerializer<ExtremeCookingPotRecipe> {
+    public enum Serializer implements RecipeSerializer<ExtremeCookingPotShapelessRecipe> {
         INSTANCE;
 
         @Override
-        public ExtremeCookingPotRecipe read(Identifier recipeId, JsonObject json) {
+        public ExtremeCookingPotShapelessRecipe read(Identifier recipeId, JsonObject json) {
             String groupIn = JsonHelper.getString(json, "group", "");
             DefaultedList<Ingredient> inputItemsIn = readIngredients(JsonHelper.getArray(json, "ingredients"));
             if (inputItemsIn.isEmpty()) throw new JsonParseException("No ingredients for cooking recipe");
@@ -175,7 +175,7 @@ public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
                 ItemStack container = JsonHelper.hasElement(json, "container") ? ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "container")) : ItemStack.EMPTY;
                 float experienceIn = JsonHelper.getFloat(json, "experience", 0.0F);
                 int cookTimeIn = JsonHelper.getInt(json, "cookingtime", 200);
-                return new ExtremeCookingPotRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+                return new ExtremeCookingPotShapelessRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
             }
         }
 
@@ -189,7 +189,7 @@ public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
         }
 
         @Override
-        public @NotNull ExtremeCookingPotRecipe read(Identifier recipeId, PacketByteBuf buffer) {
+        public @NotNull ExtremeCookingPotShapelessRecipe read(Identifier recipeId, PacketByteBuf buffer) {
             String groupIn = buffer.readString();
             CookingPotRecipeBookTab tabIn = CookingPotRecipeBookTab.findByName(buffer.readString());
             int i = buffer.readVarInt();
@@ -199,11 +199,11 @@ public class ExtremeCookingPotRecipe implements Recipe<Inventory> {
             ItemStack container = buffer.readItemStack();
             float experienceIn = buffer.readFloat();
             int cookTimeIn = buffer.readVarInt();
-            return new ExtremeCookingPotRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+            return new ExtremeCookingPotShapelessRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
         }
 
         @Override
-        public void write(PacketByteBuf buffer, ExtremeCookingPotRecipe recipe) {
+        public void write(PacketByteBuf buffer, ExtremeCookingPotShapelessRecipe recipe) {
             buffer.writeString(recipe.group);
             buffer.writeString(recipe.tab != null ? recipe.tab.toString() : "");
             buffer.writeVarInt(recipe.inputItems.size());

@@ -6,9 +6,6 @@ import net.fabricmc.api.Environment;
 
 @Environment(EnvType.CLIENT)
 public class AvaritiaDelightClient {
-    public static void init() {
-    }
-
     public static void process() {
         ADRenderers.registerBlockEntityRenderers();
         ADRenderers.registerRenderLayers();

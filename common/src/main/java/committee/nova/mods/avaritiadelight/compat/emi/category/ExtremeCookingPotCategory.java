@@ -1,7 +1,7 @@
 package committee.nova.mods.avaritiadelight.compat.emi.category;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
-import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotRecipe;
+import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapelessRecipe;
 import committee.nova.mods.avaritiadelight.registry.ADBlocks;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
@@ -19,9 +19,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public record ExtremeCookingPotCategory(ExtremeCookingPotRecipe recipe) implements EmiRecipe {
+public record ExtremeCookingPotCategory(ExtremeCookingPotShapelessRecipe recipe) implements EmiRecipe {
     public static final EmiStack WORKSTATION = EmiStack.of(ADBlocks.EXTREME_COOKING_POT.get());
-    public static final EmiRecipeCategory CATEGORY = new EmiRecipeCategory(ExtremeCookingPotRecipe.ID, WORKSTATION);
+    public static final EmiRecipeCategory CATEGORY = new EmiRecipeCategory(ExtremeCookingPotShapelessRecipe.ID, WORKSTATION);
     private static final EmiTexture TEXTURE = new EmiTexture(Identifier.of(AvaritiaDelight.MOD_ID, "textures/gui/jei/extreme_cooking_pot.png"), 0, 0, 189, 162);
 
     @Override

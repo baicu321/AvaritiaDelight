@@ -41,7 +41,7 @@ public class ExtremeStoveBlockEntity extends SyncedBlockEntity {
     private final DefaultedList<ItemStack> stacks = DefaultedList.ofSize(INVENTORY_SLOT_COUNT, ItemStack.EMPTY);
     private final int[] cookingTimes = new int[6];
     private final int[] cookingTimesTotal = new int[6];
-    private Identifier[] lastRecipeIDs = new Identifier[6];
+    private final Identifier[] lastRecipeIDs = new Identifier[6];
 
     public ExtremeStoveBlockEntity(BlockPos pos, BlockState state) {
         super(ADBlockEntities.EXTREME_STOVE.get(), pos, state);

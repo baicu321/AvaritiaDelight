@@ -1,7 +1,7 @@
 package committee.nova.mods.avaritiadelight.compat.jei.category;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
-import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotRecipe;
+import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapelessRecipe;
 import committee.nova.mods.avaritiadelight.registry.ADBlocks;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -21,8 +21,8 @@ import net.minecraft.util.collection.DefaultedList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ExtremeCookingPotCategory implements IRecipeCategory<ExtremeCookingPotRecipe> {
-    public static final RecipeType<ExtremeCookingPotRecipe> TYPE = new RecipeType<>(ExtremeCookingPotRecipe.ID, ExtremeCookingPotRecipe.class);
+public class ExtremeCookingPotCategory implements IRecipeCategory<ExtremeCookingPotShapelessRecipe> {
+    public static final RecipeType<ExtremeCookingPotShapelessRecipe> TYPE = new RecipeType<>(ExtremeCookingPotShapelessRecipe.ID, ExtremeCookingPotShapelessRecipe.class);
     private static final Identifier TEXTURE = new Identifier(AvaritiaDelight.MOD_ID, "textures/gui/jei/extreme_cooking_pot.png");
     private final IDrawable background;
     private final IDrawable icon;
@@ -33,13 +33,13 @@ public class ExtremeCookingPotCategory implements IRecipeCategory<ExtremeCooking
     }
 
     @Override
-    public @NotNull RecipeType<ExtremeCookingPotRecipe> getRecipeType() {
+    public @NotNull RecipeType<ExtremeCookingPotShapelessRecipe> getRecipeType() {
         return TYPE;
     }
 
     @Override
     public @NotNull Text getTitle() {
-        return Text.translatable(ExtremeCookingPotRecipe.ID.toTranslationKey("jei.category"));
+        return Text.translatable(ExtremeCookingPotShapelessRecipe.ID.toTranslationKey("jei.category"));
     }
 
     @SuppressWarnings("removal")
@@ -54,7 +54,7 @@ public class ExtremeCookingPotCategory implements IRecipeCategory<ExtremeCooking
     }
 
     @Override
-    public void setRecipe(@NotNull IRecipeLayoutBuilder builder, ExtremeCookingPotRecipe recipe, @NotNull IFocusGroup focuses) {
+    public void setRecipe(@NotNull IRecipeLayoutBuilder builder, ExtremeCookingPotShapelessRecipe recipe, @NotNull IFocusGroup focuses) {
         ClientWorld world = MinecraftClient.getInstance().world;
         assert world != null;
         DefaultedList<Ingredient> inputs = recipe.getIngredients();

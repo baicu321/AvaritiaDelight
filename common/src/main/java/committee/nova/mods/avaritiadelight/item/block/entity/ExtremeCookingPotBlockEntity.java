@@ -1,7 +1,7 @@
 package committee.nova.mods.avaritiadelight.item.block.entity;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
-import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotRecipe;
+import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapelessRecipe;
 import committee.nova.mods.avaritiadelight.registry.ADBlockEntities;
 import committee.nova.mods.avaritiadelight.screen.handler.ExtremeCookingPotScreenHandler;
 import committee.nova.mods.avaritiadelight.util.ImplementedInventory;
@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
@@ -151,7 +152,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         boolean isHeated = cookingPot.isHeated(level, pos);
         boolean didInventoryChange = false;
         if (isHeated && cookingPot.hasInput()) {
-            Optional<ExtremeCookingPotRecipe> recipe = level.getRecipeManager().getFirstMatch(ExtremeCookingPotRecipe.Type.INSTANCE, cookingPot, level);
+            Optional<ExtremeCookingPotShapelessRecipe> recipe = level.getRecipeManager().getFirstMatch(ExtremeCookingPotShapelessRecipe.Type.INSTANCE, cookingPot, level);
             if (recipe.isPresent() && cookingPot.canCook(recipe.get()))
                 didInventoryChange = cookingPot.processCooking(recipe.get(), cookingPot);
             else
@@ -187,7 +188,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
 
     }
 
-    protected boolean canCook(ExtremeCookingPotRecipe recipe) {
+    protected boolean canCook(ExtremeCookingPotShapelessRecipe recipe) {
         if (this.hasInput()) {
             assert this.world != null;
             ItemStack resultStack = recipe.getOutput(this.world.getRegistryManager());
@@ -208,7 +209,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         } else return false;
     }
 
-    private boolean processCooking(ExtremeCookingPotRecipe recipe, ExtremeCookingPotBlockEntity cookingPot) {
+    private boolean processCooking(ExtremeCookingPotShapelessRecipe recipe, ExtremeCookingPotBlockEntity cookingPot) {
         if (this.world == null) return false;
         else {
             ++this.cookTime;
@@ -229,8 +230,8 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
 
                 for (int i = 0; i < 81; ++i) {
                     ItemStack slotStack = this.getStack(i);
-                    if (slotStack.getItem().hasRecipeRemainder())
-                        this.ejectIngredientRemainder(slotStack.getItem().getRecipeRemainder().getDefaultStack());
+                    Item remainder = slotStack.getItem().getRecipeRemainder();
+                    if (remainder != null) this.ejectIngredientRemainder(remainder.getDefaultStack());
                     else if (CookingPotBlockEntity.INGREDIENT_REMAINDER_OVERRIDES.containsKey(slotStack.getItem()))
                         this.ejectIngredientRemainder(CookingPotBlockEntity.INGREDIENT_REMAINDER_OVERRIDES.get(slotStack.getItem()).getDefaultStack());
                     if (!slotStack.isEmpty())
@@ -246,12 +247,8 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         double x = this.pos.getX() + 0.5 + direction.getOffsetX() * 0.25;
         double y = this.pos.getY() + 0.7;
         double z = this.pos.getZ() + 0.5 + direction.getOffsetZ() * 0.25;
+        assert this.world != null;
         ItemUtils.spawnItemEntity(this.world, remainderStack, x, y, z, direction.getOffsetX() * 0.08, 0.25, direction.getOffsetZ() * 0.08);
-    }
-
-    public ItemStack getContainer() {
-        ItemStack mealStack = this.getMeal();
-        return !mealStack.isEmpty() && !this.mealContainerStack.isEmpty() ? this.mealContainerStack : mealStack.getItem().getRecipeRemainder().getDefaultStack();
     }
 
     private void useStoredContainersOnMeal() {
@@ -278,11 +275,14 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
     }
 
     private boolean doesMealHaveContainer(ItemStack meal) {
+        assert this.mealContainerStack != null;
         return !this.mealContainerStack.isEmpty() || meal.getItem().hasRecipeRemainder();
     }
 
     public boolean isContainerValid(ItemStack containerItem) {
-        return !containerItem.isEmpty() && (!this.mealContainerStack.isEmpty() ? ItemStack.areItemsEqual(this.mealContainerStack, containerItem) : ItemStack.areItemsEqual(this.getMeal(), containerItem));
+        if (containerItem.isEmpty()) return false;
+        assert this.mealContainerStack != null;
+        return !this.mealContainerStack.isEmpty() ? ItemStack.areItemsEqual(this.mealContainerStack, containerItem) : ItemStack.areItemsEqual(this.getMeal(), containerItem);
     }
 
     public ItemStack useHeldItemOnMeal(ItemStack container) {
@@ -290,9 +290,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
             container.decrement(1);
             this.inventoryChanged();
             return this.getMeal().split(1);
-        } else {
-            return ItemStack.EMPTY;
-        }
+        } else return ItemStack.EMPTY;
     }
 
     public static void animationTick(World level, BlockPos pos, BlockState state, ExtremeCookingPotBlockEntity cookingPot) {

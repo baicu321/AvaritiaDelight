@@ -2,7 +2,7 @@ package committee.nova.mods.avaritiadelight.compat.jei;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
 import committee.nova.mods.avaritiadelight.compat.jei.category.ExtremeCookingPotCategory;
-import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotRecipe;
+import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapelessRecipe;
 import committee.nova.mods.avaritiadelight.registry.ADBlocks;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -35,7 +35,7 @@ public class ADJeiPlugin implements IModPlugin {
         ClientWorld world = MinecraftClient.getInstance().world;
         assert world != null;
         RecipeManager manager = world.getRecipeManager();
-        registration.addRecipes(ExtremeCookingPotCategory.TYPE, manager.listAllOfType(ExtremeCookingPotRecipe.Type.INSTANCE));
+        registration.addRecipes(ExtremeCookingPotCategory.TYPE, manager.listAllOfType(ExtremeCookingPotShapelessRecipe.Type.INSTANCE));
     }
 
     @Override
