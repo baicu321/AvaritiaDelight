@@ -5,7 +5,8 @@
   "name": "Avaritia's Delight",
   "description": "Do you want to eat some avarita food?",
   "authors": [
-    "IAFEnvoy"
+    "IAFEnvoy",
+    "MHanHanBing"
   ],
   "contact": {
     "sources": "https://github.com/Nova-Committee/AvaritiaDelight"
@@ -31,13 +32,8 @@
     "avaritia_delight.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.16.10",
     "minecraft": "~1.20.1",
-    "java": ">=17",
-    "architectury": ">=9.2.14",
+    "architectury": "*",
     "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
