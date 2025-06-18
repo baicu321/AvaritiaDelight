@@ -5,7 +5,7 @@ import net.minecraft.item.ToolMaterial;
 import vectorwing.farmersdelight.common.item.KnifeItem;
 
 public class AvaritiaDelightKnifeItem extends KnifeItem {
-    public AvaritiaDelightKnifeItem(ToolMaterial tier) {
-        super(tier, 3, -2.4f, new Settings().arch$tab(ADItemGroups.MAIN));
+    public AvaritiaDelightKnifeItem(ToolMaterial tier, Settings settings) {
+        super(tier, 3, -2.4f, settings.arch$tab(ADItemGroups.MAIN));
     }
 }

@@ -11,6 +11,11 @@ public class InfinitySlot extends Slot {
 
     @Override
     public int getMaxItemCount(ItemStack stack) {
+        return this.getMaxItemCount();
+    }
+
+    @Override
+    public int getMaxItemCount() {
         return Integer.MAX_VALUE;
     }
 }
