@@ -1,0 +1,15 @@
+{
+  "type": "avaritia_delight:crop_extractor",
+  "ingredient": {
+    "item": "avaritia_delight:crystal_cabbage"
+  },
+  "results": [
+    {
+      "item": "avaritia_delight:crystal_cabbage_seeds"
+    },
+    {
+      "item": "avaritia:crystal_matrix_ingot"
+    }
+  ],
+  "time": 200
+}

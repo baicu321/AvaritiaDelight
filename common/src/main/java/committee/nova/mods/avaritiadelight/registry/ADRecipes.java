@@ -1,6 +1,7 @@
 package committee.nova.mods.avaritiadelight.registry;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
+import committee.nova.mods.avaritiadelight.recipe.CropExtractorRecipe;
 import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapelessRecipe;
 import dev.architectury.registry.registries.DeferredRegister;
 import net.minecraft.recipe.RecipeSerializer;
@@ -14,5 +15,8 @@ public final class ADRecipes {
     static {
         TYPE_REGISTRY.register(ExtremeCookingPotShapelessRecipe.ID, () -> ExtremeCookingPotShapelessRecipe.Type.INSTANCE);
         SERIALIZER_REGISTRY.register(ExtremeCookingPotShapelessRecipe.ID, () -> ExtremeCookingPotShapelessRecipe.Serializer.INSTANCE);
+
+        TYPE_REGISTRY.register(CropExtractorRecipe.ID, () -> CropExtractorRecipe.Type.INSTANCE);
+        SERIALIZER_REGISTRY.register(CropExtractorRecipe.ID, () -> CropExtractorRecipe.Serializer.INSTANCE);
     }
 }

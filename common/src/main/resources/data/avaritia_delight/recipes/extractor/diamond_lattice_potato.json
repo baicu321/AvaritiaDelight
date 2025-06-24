@@ -1,0 +1,12 @@
+{
+  "type": "avaritia_delight:crop_extractor",
+  "ingredient": {
+    "item": "avaritia_delight:diamond_lattice_potato"
+  },
+  "results": [
+    {
+      "item": "avaritia:diamond_lattice"
+    }
+  ],
+  "time": 200
+}

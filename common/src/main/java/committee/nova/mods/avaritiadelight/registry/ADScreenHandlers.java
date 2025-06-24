@@ -1,6 +1,7 @@
 package committee.nova.mods.avaritiadelight.registry;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
+import committee.nova.mods.avaritiadelight.screen.handler.CropExtractorScreenHandler;
 import committee.nova.mods.avaritiadelight.screen.handler.ExtremeCookingPotScreenHandler;
 import committee.nova.mods.avaritiadelight.screen.handler.InfinityCabinetScreenHandler;
 import dev.architectury.registry.menu.MenuRegistry;
@@ -19,6 +20,7 @@ public final class ADScreenHandlers {
 
     public static final RegistrySupplier<ScreenHandlerType<ExtremeCookingPotScreenHandler>> EXTREME_COOKING_POT = register("extreme_cooking_pot", () -> MenuRegistry.ofExtended(ExtremeCookingPotScreenHandler::new));
     public static final RegistrySupplier<ScreenHandlerType<InfinityCabinetScreenHandler>> INFINITY_CABINET = register("infinity_cabinet", () -> new ScreenHandlerType<>(InfinityCabinetScreenHandler::new, FeatureSet.of(FeatureFlags.VANILLA)));
+    public static final RegistrySupplier<ScreenHandlerType<CropExtractorScreenHandler>> CROP_EXTRACTOR = register("crop_extractor", () -> new ScreenHandlerType<>(CropExtractorScreenHandler::new, FeatureSet.of(FeatureFlags.VANILLA)));
 
     public static <T extends ScreenHandler> RegistrySupplier<ScreenHandlerType<T>> register(String id, Supplier<ScreenHandlerType<T>> supplier) {
         return REGISTRY.register(id, supplier);

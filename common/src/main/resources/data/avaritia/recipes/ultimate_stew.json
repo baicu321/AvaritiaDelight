@@ -1,5 +1,5 @@
 {
-  "type": "avaritia_delight:extreme_cooking_shapeless",
+  "type": "avaritia:shapeless_extreme_craft",
   "category": "meals",
   "ingredients": [
     {
@@ -46,11 +46,11 @@
     },
     {
       "item": "avaritia:neutron_nugget"
+    },
+    {
+      "item": "avaritia_delight:neutronium_pot"
     }
   ],
-  "container": {
-    "item": "avaritia_delight:neutronium_pot"
-  },
   "result": {
     "item": "avaritia:ultimate_stew"
   }

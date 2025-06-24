@@ -10,7 +10,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(AvaritiaDelight.MOD_ID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class AvaritiaDelightForge {
-    @SuppressWarnings("all")
+    @SuppressWarnings("removal")
     public AvaritiaDelightForge() {
         EventBuses.registerModEventBus(AvaritiaDelight.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
         AvaritiaDelight.init();

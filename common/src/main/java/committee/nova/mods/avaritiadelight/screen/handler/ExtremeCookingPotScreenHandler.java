@@ -66,10 +66,8 @@ public class ExtremeCookingPotScreenHandler extends ScreenHandler {
                     return ItemStack.EMPTY;
             } else if (!this.insertItem(originalStack, this.inventory.size(), this.inventory.size() + 36, false))
                 return ItemStack.EMPTY;
-            if (originalStack.isEmpty())
-                slot.setStack(ItemStack.EMPTY);
-            else
-                slot.markDirty();
+            if (originalStack.isEmpty()) slot.setStack(ItemStack.EMPTY);
+            else slot.markDirty();
         }
         return newStack;
     }

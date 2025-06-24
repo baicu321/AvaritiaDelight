@@ -23,10 +23,11 @@ public final class ADBlocks {
     public static final RegistrySupplier<Block> EXTREME_COOKING_POT = register("extreme_cooking_pot", ExtremeCookingPotBlock::new);
     public static final RegistrySupplier<Block> EXTREME_STOVE = register("extreme_stove", () -> new ExtremeStoveBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK)));
     public static final RegistrySupplier<Block> INFINITY_CABINET = register("infinity_cabinet", () -> new InfinityCabinetBlock(AbstractBlock.Settings.copy(Blocks.BARREL)));
-    public static final RegistrySupplier<Block> CROP_EXTRACTOR = register("crop_extractor", () -> new HorizontalBlock(AbstractBlock.Settings.create()));
     public static final RegistrySupplier<Block> NEUTRONIUM_HAY_BALE = register("neutronium_hay_bale", () -> new HayBlock(AbstractBlock.Settings.copy(Blocks.HAY_BLOCK)));
     public static final RegistrySupplier<Block> SOUL_RICH_SOIL = register("soul_rich_soil", () -> new SoulRichSoilBlock(AbstractBlock.Settings.copy(Blocks.DIRT)));
     public static final RegistrySupplier<Block> SOUL_RICH_SOIL_FARMLAND = register("soul_rich_soil_farmland", () -> new SoilRichSoilFarmlandBlock(AbstractBlock.Settings.copy(Blocks.FARMLAND)));
+
+    public static final RegistrySupplier<Block> CROP_EXTRACTOR = register("crop_extractor", () -> new CropExtractorBlock(AbstractBlock.Settings.create()));
 
     public static final RegistrySupplier<Block> BLAZE_TOMATO_CRATE = register("blaze_tomato_crate", () -> new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
     public static final RegistrySupplier<Block> CRYSTAL_CABBAGE_CRATE = register("crystal_cabbage_crate", () -> new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));

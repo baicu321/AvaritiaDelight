@@ -21,17 +21,16 @@ import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import java.util.EnumSet;
 
 public class ExtremeCookingPotShapelessRecipe implements Recipe<Inventory> {
-    public static final Identifier ID = new Identifier(AvaritiaDelight.MOD_ID, "extreme_cooking_shapeless");
+    public static final Identifier ID = Identifier.of(AvaritiaDelight.MOD_ID, "extreme_cooking_shapeless");
     private final Identifier id;
     private final String group;
     private final CookingPotRecipeBookTab tab;
     private final DefaultedList<Ingredient> inputItems;
     private final ItemStack output;
     private final ItemStack container;
-    private final float experience;
     private final int cookTime;
 
-    public ExtremeCookingPotShapelessRecipe(Identifier id, String group, @Nullable CookingPotRecipeBookTab tab, DefaultedList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
+    public ExtremeCookingPotShapelessRecipe(Identifier id, String group, @Nullable CookingPotRecipeBookTab tab, DefaultedList<Ingredient> inputItems, ItemStack output, ItemStack container, int cookTime) {
         this.id = id;
         this.group = group;
         this.tab = tab;
@@ -43,7 +42,6 @@ public class ExtremeCookingPotShapelessRecipe implements Recipe<Inventory> {
             this.container = output.getItem().getRecipeRemainder().getDefaultStack();
         else
             this.container = ItemStack.EMPTY;
-        this.experience = experience;
         this.cookTime = cookTime;
     }
 
@@ -78,10 +76,6 @@ public class ExtremeCookingPotShapelessRecipe implements Recipe<Inventory> {
     @Override
     public ItemStack craft(Inventory inv, DynamicRegistryManager access) {
         return this.output.copy();
-    }
-
-    public float getExperience() {
-        return this.experience;
     }
 
     public int getCookTime() {
@@ -124,33 +118,6 @@ public class ExtremeCookingPotShapelessRecipe implements Recipe<Inventory> {
         return new ItemStack(ADBlocks.EXTREME_COOKING_POT.get());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        return o instanceof ExtremeCookingPotShapelessRecipe that &&
-                Float.compare(that.getExperience(), this.getExperience()) == 0 &&
-                this.getCookTime() == that.getCookTime() &&
-                this.getId().equals(that.getId()) &&
-                this.getGroup().equals(that.getGroup()) &&
-                this.tab == that.tab &&
-                this.inputItems.equals(that.inputItems) &&
-                this.output.equals(that.output) &&
-                this.container.equals(that.container);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = this.getId().hashCode();
-        result = 31 * result + this.getGroup().hashCode();
-        result = 31 * result + (this.getRecipeBookTab() != null ? this.getRecipeBookTab().hashCode() : 0);
-        result = 31 * result + this.inputItems.hashCode();
-        result = 31 * result + this.output.hashCode();
-        result = 31 * result + this.container.hashCode();
-        result = 31 * result + (this.getExperience() != 0.0F ? Float.floatToIntBits(this.getExperience()) : 0);
-        result = 31 * result + this.getCookTime();
-        return result;
-    }
-
     public enum Type implements RecipeType<ExtremeCookingPotShapelessRecipe> {
         INSTANCE
     }
@@ -173,9 +140,8 @@ public class ExtremeCookingPotShapelessRecipe implements Recipe<Inventory> {
 
                 ItemStack outputIn = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));
                 ItemStack container = JsonHelper.hasElement(json, "container") ? ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "container")) : ItemStack.EMPTY;
-                float experienceIn = JsonHelper.getFloat(json, "experience", 0.0F);
                 int cookTimeIn = JsonHelper.getInt(json, "cookingtime", 200);
-                return new ExtremeCookingPotShapelessRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+                return new ExtremeCookingPotShapelessRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, cookTimeIn);
             }
         }
 
@@ -197,9 +163,8 @@ public class ExtremeCookingPotShapelessRecipe implements Recipe<Inventory> {
             inputItemsIn.replaceAll(ignored -> Ingredient.fromPacket(buffer));
             ItemStack outputIn = buffer.readItemStack();
             ItemStack container = buffer.readItemStack();
-            float experienceIn = buffer.readFloat();
             int cookTimeIn = buffer.readVarInt();
-            return new ExtremeCookingPotShapelessRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+            return new ExtremeCookingPotShapelessRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, cookTimeIn);
         }
 
         @Override
@@ -211,7 +176,6 @@ public class ExtremeCookingPotShapelessRecipe implements Recipe<Inventory> {
                 ingredient.write(buffer);
             buffer.writeItemStack(recipe.output);
             buffer.writeItemStack(recipe.container);
-            buffer.writeFloat(recipe.experience);
             buffer.writeVarInt(recipe.cookTime);
         }
     }

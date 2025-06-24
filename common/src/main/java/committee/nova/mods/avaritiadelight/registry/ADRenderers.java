@@ -1,6 +1,7 @@
 package committee.nova.mods.avaritiadelight.registry;
 
 import committee.nova.mods.avaritiadelight.render.ExtremeStoveBlockEntityRenderer;
+import committee.nova.mods.avaritiadelight.screen.gui.CropExtractorScreen;
 import committee.nova.mods.avaritiadelight.screen.gui.ExtremeCookingPotScreen;
 import committee.nova.mods.avaritiadelight.screen.gui.InfinityCabinetScreen;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
@@ -23,5 +24,6 @@ public final class ADRenderers {
     public static void registerScreenFactories() {
         MenuRegistry.registerScreenFactory(ADScreenHandlers.EXTREME_COOKING_POT.get(), ExtremeCookingPotScreen::new);
         MenuRegistry.registerScreenFactory(ADScreenHandlers.INFINITY_CABINET.get(), InfinityCabinetScreen::new);
+        MenuRegistry.registerScreenFactory(ADScreenHandlers.CROP_EXTRACTOR.get(), CropExtractorScreen::new);
     }
 }

@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class ExtremeCookingPotCategory implements IRecipeCategory<ExtremeCookingPotShapelessRecipe> {
     public static final RecipeType<ExtremeCookingPotShapelessRecipe> TYPE = new RecipeType<>(ExtremeCookingPotShapelessRecipe.ID, ExtremeCookingPotShapelessRecipe.class);
-    private static final Identifier TEXTURE = new Identifier(AvaritiaDelight.MOD_ID, "textures/gui/jei/extreme_cooking_pot.png");
+    private static final Identifier TEXTURE = Identifier.of(AvaritiaDelight.MOD_ID, "textures/gui/jei/extreme_cooking_pot.png");
     private final IDrawable background;
     private final IDrawable icon;
 

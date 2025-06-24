@@ -1,0 +1,15 @@
+{
+  "type": "avaritia_delight:crop_extractor",
+  "ingredient": {
+    "item": "avaritia_delight:neutronium_wheat"
+  },
+  "results": [
+    {
+      "item": "avaritia_delight:neutronium_wheat_seeds"
+    },
+    {
+      "item": "avaritia:neutron_nugget"
+    }
+  ],
+  "time": 200
+}
