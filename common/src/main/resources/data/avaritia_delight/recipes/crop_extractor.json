@@ -1,0 +1,42 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "C": {
+      "item": "avaritia:crystal_matrix_ingot"
+    },
+    "F": {
+      "item": "avaritia:star_fuel"
+    },
+    "N": {
+      "item": "avaritia:neutron_nugget"
+    },
+    "P": {
+      "item": "avaritia:neutron_pile"
+    },
+    ".": {
+      "item": "avaritia:neutron_ingot"
+    },
+    "E": {
+      "item": "avaritia:endest_pearl"
+    }
+  },
+  "pattern": [
+    "IIICICIII",
+    "IF  N  FI",
+    "I P...P I",
+    "C . N . C",
+    "IN.NEN.NI",
+    "C . N . C",
+    "I P...P I",
+    "IF  N  FI",
+    "IIICICIII"
+  ],
+  "result": {
+    "item": "avaritia_delight:crop_extractor"
+  },
+  "show_notification": true,
+  "tier": 4
+}

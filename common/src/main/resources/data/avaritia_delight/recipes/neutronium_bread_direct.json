@@ -1,0 +1,93 @@
+{
+  "type": "avaritia:shapeless_table",
+  "category": "meals",
+  "ingredients": [
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    {
+      "item": "avaritia_delight:neutronium_wheat"
+    }
+  ],
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "result": {
+    "item": "avaritia_delight:neutronium_bread"
+  }
+}

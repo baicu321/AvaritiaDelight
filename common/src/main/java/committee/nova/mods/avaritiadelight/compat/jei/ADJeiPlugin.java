@@ -1,7 +1,9 @@
 package committee.nova.mods.avaritiadelight.compat.jei;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
+import committee.nova.mods.avaritiadelight.compat.jei.category.CropExtractorCategory;
 import committee.nova.mods.avaritiadelight.compat.jei.category.ExtremeCookingPotCategory;
+import committee.nova.mods.avaritiadelight.recipe.CropExtractorRecipe;
 import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapelessRecipe;
 import committee.nova.mods.avaritiadelight.registry.ADBlocks;
 import mezz.jei.api.IModPlugin;
@@ -28,6 +30,7 @@ public class ADJeiPlugin implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         IGuiHelper helper = registration.getJeiHelpers().getGuiHelper();
         registration.addRecipeCategories(new ExtremeCookingPotCategory(helper));
+        registration.addRecipeCategories(new CropExtractorCategory(helper));
     }
 
     @Override
@@ -36,10 +39,12 @@ public class ADJeiPlugin implements IModPlugin {
         assert world != null;
         RecipeManager manager = world.getRecipeManager();
         registration.addRecipes(ExtremeCookingPotCategory.TYPE, manager.listAllOfType(ExtremeCookingPotShapelessRecipe.Type.INSTANCE));
+        registration.addRecipes(CropExtractorCategory.TYPE, manager.listAllOfType(CropExtractorRecipe.Type.INSTANCE));
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addRecipeCatalyst(new ItemStack(ADBlocks.EXTREME_COOKING_POT.get()), ExtremeCookingPotCategory.TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ADBlocks.CROP_EXTRACTOR.get()), CropExtractorCategory.TYPE);
     }
 }

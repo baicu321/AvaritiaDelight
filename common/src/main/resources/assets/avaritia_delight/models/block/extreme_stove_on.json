@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "bottom": "avaritia_delight:block/extreme_stove_bottom",
+    "bottom": "avaritia_delight:block/extreme_stove_bottom_on",
     "front": "avaritia_delight:block/extreme_stove_front_on",
     "side": "avaritia_delight:block/extreme_stove_side",
     "top": "avaritia_delight:block/extreme_stove_top_on"

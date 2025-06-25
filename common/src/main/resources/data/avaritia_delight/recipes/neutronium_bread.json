@@ -1,0 +1,27 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "N": {
+      "item": "avaritia_delight:neutronium_wheat_dough"
+    },
+    "B": {
+      "item": "minecraft:bread"
+    }
+  },
+  "pattern": [
+    "         ",
+    "     NN  ",
+    "    NNBN ",
+    "   NNBNN ",
+    "  NNBNN  ",
+    " NNBNN   ",
+    " NBNN    ",
+    "  NN     ",
+    "         "
+  ],
+  "result": {
+    "item": "avaritia_delight:neutronium_bread"
+  },
+  "show_notification": true,
+  "tier": 4
+}

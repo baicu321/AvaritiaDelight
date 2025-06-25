@@ -1,0 +1,24 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "N": {
+      "item": "avaritia:neutron_ingot"
+    }
+  },
+  "pattern": [
+    "         ",
+    "         ",
+    "         ",
+    "         ",
+    "         ",
+    "N       N",
+    "N       N",
+    " NN   NN ",
+    "   NNN   "
+  ],
+  "result": {
+    "item": "avaritia_delight:neutronium_bowl"
+  },
+  "show_notification": true,
+  "tier": 4
+}

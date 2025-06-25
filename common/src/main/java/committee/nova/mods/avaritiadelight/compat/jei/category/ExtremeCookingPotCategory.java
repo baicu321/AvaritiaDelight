@@ -28,7 +28,7 @@ public class ExtremeCookingPotCategory implements IRecipeCategory<ExtremeCooking
     private final IDrawable icon;
 
     public ExtremeCookingPotCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 0, 0, 170, 63);
+        this.background = helper.createDrawable(TEXTURE, 0, 0, 192, 165);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ADBlocks.EXTREME_COOKING_POT.get()));
     }
 

@@ -72,5 +72,4 @@ public record ExtremeCookingPotCategory(ExtremeCookingPotShapelessRecipe recipe)
         widgets.addSlot(EmiStack.of(this.recipe.getOutputContainer()), 168, 99).recipeContext(this).drawBack(false);
         widgets.addSlot(EmiStack.of(output), 168, 137).recipeContext(this).drawBack(false);
     }
-
 }

@@ -15,10 +15,10 @@ import java.util.function.Supplier;
 public final class ADItems {
     public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(AvaritiaDelight.MOD_ID, RegistryKeys.ITEM);
 
-    public static final RegistrySupplier<Item> BLAZE_KNIFE = register("blaze_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.GOLD, new Item.Settings()));
-    public static final RegistrySupplier<Item> CRYSTAL_KNIFE = register("crystal_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.DIAMOND, new Item.Settings()));
-    public static final RegistrySupplier<Item> NEUTRONIUM_KNIFE = register("neutronium_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.NETHERITE, new Item.Settings()));
-    public static final RegistrySupplier<Item> INFINITY_KNIFE = register("infinity_knife", () -> new AvaritiaDelightKnifeItem(ADToolMaterials.INFINITY_SWORD, new Item.Settings()));
+    public static final RegistrySupplier<Item> BLAZE_KNIFE = register("blaze_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.GOLD, new Item.Settings().maxDamage(4888)));
+    public static final RegistrySupplier<Item> CRYSTAL_KNIFE = register("crystal_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.DIAMOND, new Item.Settings().maxDamage(8888)));
+    public static final RegistrySupplier<Item> NEUTRONIUM_KNIFE = register("neutronium_knife", () -> new AvaritiaDelightKnifeItem(ToolMaterials.NETHERITE, new Item.Settings().maxDamage(88888)));
+    public static final RegistrySupplier<Item> INFINITY_KNIFE = register("infinity_knife", () -> new AvaritiaDelightKnifeItem(ADToolMaterials.INFINITY_SWORD, new Item.Settings().maxDamage(888888)));
 
     public static final RegistrySupplier<Item> BLAZE_TOMATO_SEEDS = register("blaze_tomato_seeds", () -> new AliasedBlockItem(ADBlocks.BUDDING_BLAZE_TOMATO.get(), new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> CRYSTAL_CABBAGE_SEEDS = register("crystal_cabbage_seeds", () -> new AliasedBlockItem(ADBlocks.CRYSTAL_CABBAGE.get(), new Item.Settings().arch$tab(ADItemGroups.MAIN)));

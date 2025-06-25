@@ -1,8 +1,14 @@
+
 {
-  "parent": "minecraft:block/orientable",
+  "render_type": "cutout",
+  "parent": "block/cube",
   "textures": {
-    "front": "avaritia_delight:block/crop_extractor_side",
-    "side": "avaritia_delight:block/crop_extractor",
-    "top": "avaritia_delight:block/crop_extractor"
+    "north": "avaritia_delight:block/crop_extractor",
+    "east": "avaritia:block/machine/collector/collector_side_left",
+    "south": "avaritia:block/machine/collector/frame",
+    "west": "avaritia:block/machine/collector/collector_side_right",
+    "up": "avaritia:block/machine/collector/collector_top",
+    "down": "avaritia:block/machine/collector/frame",
+    "particle": "avaritia:block/machine/collector/collector_top"
   }
 }

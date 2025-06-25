@@ -14,7 +14,8 @@
   "block.avaritia_delight.neutronium_wheat": "中子态素小麦",
   "block.avaritia_delight.soul_rich_soil": "灵魂沃土",
   "block.avaritia_delight.soul_rich_soil_farmland": "灵魂沃土耕地",
-  "emi.category.avaritia_delight.extreme_cooking": "终焉烹饪",
+  "emi.category.avaritia_delight.crop_extractor": "作物提取",
+  "emi.category.avaritia_delight.extreme_cooking_shapeless": "终焉烹饪",
   "item.avaritia_delight.blaze_knife": "炽火之斩骨刃",
   "item.avaritia_delight.blaze_tomato": "烈火番茄",
   "item.avaritia_delight.blaze_tomato_sauce": "烈火番茄酱",
@@ -44,5 +45,6 @@
   "item.avaritia_delight.raw_crystal_pasta": "生水晶意面",
   "item.avaritia_delight.slice_of_endless_cake": "贪婪蛋糕切片",
   "itemGroup.avaritia_delight.main": "无尽乐事",
-  "jei.category.avaritia_delight.extreme_cooking": "终焉烹饪"
+  "jei.category.avaritia_delight.crop_extractor": "作物提取",
+  "jei.category.avaritia_delight.extreme_cooking_shapeless": "终焉烹饪"
 }
