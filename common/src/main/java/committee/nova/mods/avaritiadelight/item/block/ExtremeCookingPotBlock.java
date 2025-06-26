@@ -5,7 +5,6 @@ import committee.nova.mods.avaritiadelight.registry.ADBlockEntities;
 import committee.nova.mods.avaritiadelight.util.BlockEntityUtil;
 import dev.architectury.registry.menu.MenuRegistry;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -71,7 +70,7 @@ public class ExtremeCookingPotBlock extends CookingPotBlock {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World level, BlockState state, BlockEntityType<T> type) {
-        return BlockWithEntity.checkType(type, ADBlockEntities.EXTREME_COOKING_POT.get(), level.isClient ? ExtremeCookingPotBlockEntity::animationTick : ExtremeCookingPotBlockEntity::cookingTick);
+        return checkType(type, ADBlockEntities.EXTREME_COOKING_POT.get(), level.isClient ? ExtremeCookingPotBlockEntity::animationTick : ExtremeCookingPotBlockEntity::cookingTick);
     }
 
     @Override

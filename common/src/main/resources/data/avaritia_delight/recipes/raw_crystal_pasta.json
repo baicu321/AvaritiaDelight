@@ -1,0 +1,28 @@
+{
+  "type": "avaritia_delight:extreme_cooking_shaped",
+  "key": {
+    "P": {
+      "item": "farmersdelight:raw_pasta"
+    },
+    "C": {
+      "item": "avaritia_delight:crystal_cabbage_leaf"
+    },
+    "I": {
+      "item": "avaritia:crystal_matrix_ingot"
+    },
+    "N": {
+      "item": "avaritia_delight:neutronium_wheat_dough"
+    },
+    "D": {
+      "item": "farmersdelight:wheat_dough"
+    }
+  },
+  "pattern": [
+    "DCN",
+    "IPC",
+    "NID"
+  ],
+  "result": {
+    "item": "avaritia_delight:raw_crystal_pasta"
+  }
+}

@@ -16,10 +16,10 @@ public class SliceOfEndlessCakeItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
-        if (entity instanceof PlayerEntity player) {
+        if (entity instanceof PlayerEntity player && world.getTime() % 10 == 0) {
             HungerManager hungerManager = player.getHungerManager();
-            hungerManager.setExhaustion(20);
-            hungerManager.setSaturationLevel(20);
+            hungerManager.addExhaustion(1);
+            hungerManager.setSaturationLevel(hungerManager.getSaturationLevel() + 1);
         }
     }
 }

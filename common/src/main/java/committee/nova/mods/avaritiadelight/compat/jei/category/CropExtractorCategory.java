@@ -25,8 +25,7 @@ import java.util.List;
 public class CropExtractorCategory implements IRecipeCategory<CropExtractorRecipe> {
     public static final RecipeType<CropExtractorRecipe> TYPE = new RecipeType<>(CropExtractorRecipe.ID, CropExtractorRecipe.class);
     private static final Identifier TEXTURE = Identifier.of(AvaritiaDelight.MOD_ID, "textures/gui/jei/crop_extractor.png");
-    private final IDrawable background;
-    private final IDrawable icon;
+    private final IDrawable background, icon;
 
     public CropExtractorCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 170, 63);
@@ -65,5 +64,6 @@ public class CropExtractorCategory implements IRecipeCategory<CropExtractorRecip
             for (int j = 0; j < 2; j++)
                 if (i * 2 + j < outputs.size())
                     builder.addSlot(RecipeIngredientRole.OUTPUT, j * 18 + 99, i * 18 + 12).addItemStack(outputs.get(i * 2 + j));
+        builder.moveRecipeTransferButton(170, 30);
     }
 }

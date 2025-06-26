@@ -1,31 +1,81 @@
 {
-  "type": "avaritia:shaped_table",
-  "key": {
-    "N": {
+  "type": "avaritia:shapeless_table",
+  "ingredients": [
+    {
       "item": "avaritia:neutron_pile"
     },
-    "C": {
+    {
+      "item": "avaritia:neutron_pile"
+    },
+    {
+      "item": "avaritia:neutron_pile"
+    },
+    {
+      "item": "avaritia:neutron_pile"
+    },
+    {
       "item": "avaritia:blaze_cube"
     },
-    "S": {
+    {
       "item": "minecraft:soul_soil"
     },
-    "B": {
+    {
+      "item": "minecraft:soul_soil"
+    },
+    {
+      "item": "minecraft:soul_soil"
+    },
+    {
+      "item": "minecraft:soul_soil"
+    },
+    {
+      "item": "avaritia:blaze_cube"
+    },
+    {
       "item": "minecraft:bone_meal"
     },
-    "W": {
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "item": "avaritia:blaze_cube"
+    },
+    {
       "item": "minecraft:nether_wart"
     },
-    "E": {
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "avaritia:blaze_cube"
+    },
+    {
       "item": "farmersdelight:rich_soil"
+    },
+    {
+      "item": "farmersdelight:rich_soil"
+    },
+    {
+      "item": "farmersdelight:rich_soil"
+    },
+    {
+      "item": "farmersdelight:rich_soil"
+    },
+    {
+      "item": "avaritia:blaze_cube"
     }
-  },
-  "pattern": [
-    "NNNNC",
-    "SSSSC",
-    "BBBBC",
-    "WWWWC",
-    "EEEEC"
   ],
   "result": {
     "item": "avaritia_delight:soul_rich_soil"

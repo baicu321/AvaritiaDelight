@@ -19,7 +19,7 @@
       "committee.nova.mods.avaritiadelight.fabric.AvaritiaDelightFabric"
     ],
     "client": [
-      "committee.nova.mods.avaritiadelight.fabric.client.AvaritiaDelightFabricClient"
+      "committee.nova.mods.avaritiadelight.fabric.AvaritiaDelightFabricClient"
     ],
     "jei_mod_plugin": [
       "committee.nova.mods.avaritiadelight.compat.jei.ADJeiPlugin"

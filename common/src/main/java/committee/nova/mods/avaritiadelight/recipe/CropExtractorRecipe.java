@@ -13,7 +13,6 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class CropExtractorRecipe implements Recipe<Inventory> {
@@ -97,9 +96,8 @@ public class CropExtractorRecipe implements Recipe<Inventory> {
         @Override
         public CropExtractorRecipe read(Identifier id, PacketByteBuf buf) {
             Ingredient input = Ingredient.fromPacket(buf);
-            int outputCount = buf.readInt();
-            List<ItemStack> outputs = new LinkedList<>();
-            for (int i = 0; i < outputCount; i++) outputs.add(buf.readItemStack());
+            DefaultedList<ItemStack> outputs = DefaultedList.ofSize(buf.readVarInt(), ItemStack.EMPTY);
+            outputs.replaceAll(ignored -> buf.readItemStack());
             int cookTimeIn = buf.readInt();
             return new CropExtractorRecipe(id, input, outputs, cookTimeIn);
         }

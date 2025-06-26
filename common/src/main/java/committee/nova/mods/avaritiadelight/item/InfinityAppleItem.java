@@ -7,7 +7,7 @@ import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 
 public class InfinityAppleItem extends Item {
-    private static final int DURATION = 20 * 60 * 60;//1h
+    private static final int DURATION = Integer.MAX_VALUE;
 
     public InfinityAppleItem() {
         super(new Item.Settings().arch$tab(ADItemGroups.MAIN).food(new FoodComponent.Builder()

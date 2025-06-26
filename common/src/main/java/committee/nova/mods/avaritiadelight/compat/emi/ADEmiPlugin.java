@@ -3,6 +3,7 @@ package committee.nova.mods.avaritiadelight.compat.emi;
 import committee.nova.mods.avaritiadelight.compat.emi.category.CropExtractorCategory;
 import committee.nova.mods.avaritiadelight.compat.emi.category.ExtremeCookingPotCategory;
 import committee.nova.mods.avaritiadelight.recipe.CropExtractorRecipe;
+import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapedRecipe;
 import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapelessRecipe;
 import dev.emi.emi.api.EmiEntrypoint;
 import dev.emi.emi.api.EmiPlugin;
@@ -14,6 +15,8 @@ public class ADEmiPlugin implements EmiPlugin {
     public void register(EmiRegistry registry) {
         registry.addCategory(ExtremeCookingPotCategory.CATEGORY);
         registry.addWorkstation(ExtremeCookingPotCategory.CATEGORY, ExtremeCookingPotCategory.WORKSTATION);
+        for (ExtremeCookingPotShapedRecipe recipe : registry.getRecipeManager().listAllOfType(ExtremeCookingPotShapedRecipe.Type.INSTANCE))
+            registry.addRecipe(new ExtremeCookingPotCategory(recipe));
         for (ExtremeCookingPotShapelessRecipe recipe : registry.getRecipeManager().listAllOfType(ExtremeCookingPotShapelessRecipe.Type.INSTANCE))
             registry.addRecipe(new ExtremeCookingPotCategory(recipe));
 

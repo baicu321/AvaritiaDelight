@@ -1,4 +1,4 @@
-package committee.nova.mods.avaritiadelight.fabric.client;
+package committee.nova.mods.avaritiadelight.fabric;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelightClient;
 import net.fabricmc.api.ClientModInitializer;

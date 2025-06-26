@@ -15,7 +15,7 @@
   "block.avaritia_delight.soul_rich_soil": "Soul Rich Soil",
   "block.avaritia_delight.soul_rich_soil_farmland": "Soul Rich Soil Farmland",
   "emi.category.avaritia_delight.crop_extractor": "Crop Extract",
-  "emi.category.avaritia_delight.extreme_cooking_shapeless": "Extreme Cooking",
+  "emi.category.avaritia_delight.extreme_cooking": "Extreme Cooking",
   "item.avaritia_delight.blaze_knife": "Blaze Knife",
   "item.avaritia_delight.blaze_tomato": "Blaze Tomato",
   "item.avaritia_delight.blaze_tomato_sauce": "Blaze Tomato Sauce",
@@ -46,5 +46,5 @@
   "item.avaritia_delight.slice_of_endless_cake": "Slice Of Endless Cake",
   "itemGroup.avaritia_delight.main": "Avaritia's Delight",
   "jei.category.avaritia_delight.crop_extractor": "Crop Extract",
-  "jei.category.avaritia_delight.extreme_cooking_shapeless": "Extreme Cooking"
+  "jei.category.avaritia_delight.extreme_cooking": "Extreme Cooking"
 }

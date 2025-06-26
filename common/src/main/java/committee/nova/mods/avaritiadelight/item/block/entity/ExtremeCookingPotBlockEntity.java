@@ -1,6 +1,8 @@
 package committee.nova.mods.avaritiadelight.item.block.entity;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
+import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotRecipe;
+import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapedRecipe;
 import committee.nova.mods.avaritiadelight.recipe.ExtremeCookingPotShapelessRecipe;
 import committee.nova.mods.avaritiadelight.registry.ADBlockEntities;
 import committee.nova.mods.avaritiadelight.screen.handler.ExtremeCookingPotScreenHandler;
@@ -152,11 +154,16 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         boolean isHeated = cookingPot.isHeated(level, pos);
         boolean didInventoryChange = false;
         if (isHeated && cookingPot.hasInput()) {
-            Optional<ExtremeCookingPotShapelessRecipe> recipe = level.getRecipeManager().getFirstMatch(ExtremeCookingPotShapelessRecipe.Type.INSTANCE, cookingPot, level);
+            Optional<ExtremeCookingPotShapedRecipe> recipe = level.getRecipeManager().getFirstMatch(ExtremeCookingPotShapedRecipe.Type.INSTANCE, cookingPot, level);
             if (recipe.isPresent() && cookingPot.canCook(recipe.get()))
                 didInventoryChange = cookingPot.processCooking(recipe.get(), cookingPot);
-            else
-                cookingPot.cookTime = 0;
+            else {
+                Optional<ExtremeCookingPotShapelessRecipe> recipe2 = level.getRecipeManager().getFirstMatch(ExtremeCookingPotShapelessRecipe.Type.INSTANCE, cookingPot, level);
+                if (recipe2.isPresent() && cookingPot.canCook(recipe2.get()))
+                    didInventoryChange = cookingPot.processCooking(recipe2.get(), cookingPot);
+                else
+                    cookingPot.cookTime = 0;
+            }
         } else if (cookingPot.cookTime > 0)
             cookingPot.cookTime = MathHelper.clamp(cookingPot.cookTime - 2, 0, cookingPot.cookTimeTotal);
 
@@ -188,7 +195,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
 
     }
 
-    protected boolean canCook(ExtremeCookingPotShapelessRecipe recipe) {
+    protected boolean canCook(ExtremeCookingPotRecipe recipe) {
         if (this.hasInput()) {
             assert this.world != null;
             ItemStack resultStack = recipe.getOutput(this.world.getRegistryManager());
@@ -209,7 +216,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         } else return false;
     }
 
-    private boolean processCooking(ExtremeCookingPotShapelessRecipe recipe, ExtremeCookingPotBlockEntity cookingPot) {
+    private boolean processCooking(ExtremeCookingPotRecipe recipe, ExtremeCookingPotBlockEntity cookingPot) {
         if (this.world == null) return false;
         else {
             ++this.cookTime;
