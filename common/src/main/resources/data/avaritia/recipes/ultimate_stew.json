@@ -1,6 +1,6 @@
 {
   "type": "avaritia:shapeless_table",
-  "category": "meals",
+  "category": "equipment",
   "ingredients": [
     {
       "item": "minecraft:apple"
@@ -9,40 +9,100 @@
       "item": "minecraft:golden_apple"
     },
     {
-      "item": "minecraft:bread"
+      "item": "minecraft:melon_slice"
     },
     {
       "item": "minecraft:kelp"
     },
     {
-      "item": "minecraft:cocoa_beans"
+      "item": "minecraft:sweet_berry_bush"
     },
     {
-      "item": "minecraft:cake"
-    },
-    {
-      "item": "minecraft:glistering_melon_slice"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:poisonous_potato"
+      "item": "minecraft:cave_vines"
     },
     {
       "item": "minecraft:chorus_fruit"
     },
     {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:golden_carrot"
+    },
+    {
+      "item": "minecraft:potatoes"
+    },
+    {
+      "item": "minecraft:poisonous_potato"
+    },
+    {
       "item": "minecraft:beetroot"
     },
     {
-      "item": "minecraft:mushroom_stew"
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    {
+      "item": "minecraft:cocoa"
+    },
+    {
+      "item": "minecraft:pitcher_crop"
     },
     {
       "item": "minecraft:honey_bottle"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "item": "minecraft:cactus"
+    },
+    {
+      "item": "minecraft:bamboo"
+    },
+    {
+      "item": "minecraft:sugar_cane"
+    },
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    },
+    {
+      "item": "minecraft:red_mushroom"
+    },
+    {
+      "item": "minecraft:crimson_fungus"
+    },
+    {
+      "item": "minecraft:warped_fungus"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "farmersdelight:cabbage"
+    },
+    {
+      "item": "farmersdelight:tomato"
+    },
+    {
+      "item": "farmersdelight:rotten_tomato"
+    },
+    {
+      "item": "farmersdelight:onions"
+    },
+    {
+      "item": "farmersdelight:rice"
+    },
+    {
+      "item": "farmersdelight:pumpkin_slice"
     },
     {
       "item": "avaritia:neutron_nugget"
@@ -53,5 +113,6 @@
   ],
   "result": {
     "item": "avaritia:ultimate_stew"
-  }
+  },
+  "tier": 4
 }

@@ -20,6 +20,7 @@ import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,6 +29,7 @@ public class CropExtractorBlock extends BlockWithEntity {
 
     public CropExtractorBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH));
     }
 
     @Override

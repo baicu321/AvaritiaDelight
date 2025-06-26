@@ -61,11 +61,12 @@ public record ExtremeCookingPotCategory(ExtremeCookingPotRecipe recipe) implemen
         DefaultedList<Ingredient> inputs = this.recipe.getIngredients();
         ItemStack output = this.recipe.getOutput(level.getRegistryManager());
         widgets.addTexture(TEXTURE, 1, 1);
+        int surroundWidth = (9 - this.recipe.width()) / 2, surroundHeight = (9 - this.recipe.height()) / 2;
         for (int i = 0; i < this.recipe.height(); i++) {
             for (int j = 0; j < this.recipe.width(); j++) {
                 int index = j + (i * this.recipe.width());
                 if (index < inputs.size())
-                    widgets.addSlot(EmiIngredient.of(inputs.get(index)), j * 18 + 2, i * 18 + 2).drawBack(false);
+                    widgets.addSlot(EmiIngredient.of(inputs.get(index)), (j + surroundWidth) * 18 + 2, (i + surroundHeight) * 18 + 2).drawBack(false);
             }
         }
         widgets.addSlot(EmiStack.of(output), 168, 76).recipeContext(this).drawBack(false);

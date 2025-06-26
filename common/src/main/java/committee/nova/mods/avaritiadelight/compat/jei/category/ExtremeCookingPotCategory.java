@@ -63,11 +63,12 @@ public class ExtremeCookingPotCategory<T extends ExtremeCookingPotRecipe> implem
         ClientWorld world = MinecraftClient.getInstance().world;
         assert world != null;
         DefaultedList<Ingredient> inputs = recipe.getIngredients();
+        int surroundWidth = (9 - recipe.width()) / 2, surroundHeight = (9 - recipe.height()) / 2;
         for (int i = 0; i < recipe.height(); i++) {
             for (int j = 0; j < recipe.width(); j++) {
                 int index = j + (i * recipe.width());
                 if (index < inputs.size())
-                    builder.addSlot(RecipeIngredientRole.INPUT, j * 18 + 2, i * 18 + 2).addIngredients(inputs.get(index));
+                    builder.addSlot(RecipeIngredientRole.INPUT, (j + surroundWidth) * 18 + 2, (i + surroundHeight) * 18 + 2).addIngredients(inputs.get(index));
             }
         }
         builder.addSlot(RecipeIngredientRole.OUTPUT, 168, 76).addItemStack(recipe.getOutput(world.getRegistryManager()));

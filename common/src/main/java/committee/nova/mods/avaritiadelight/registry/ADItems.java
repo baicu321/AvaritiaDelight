@@ -4,10 +4,7 @@ import committee.nova.mods.avaritiadelight.AvaritiaDelight;
 import committee.nova.mods.avaritiadelight.item.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.*;
 import net.minecraft.registry.RegistryKeys;
 
 import java.util.function.Supplier;
@@ -28,12 +25,12 @@ public final class ADItems {
     public static final RegistrySupplier<Item> CRYSTAL_CABBAGE = register("crystal_cabbage", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN).food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6F).build())));
     public static final RegistrySupplier<Item> NEUTRONIUM_WHEAT = register("neutronium_wheat", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
 
-    public static final RegistrySupplier<Item> BLAZE_TOMATO_SAUCE = register("blaze_tomato_sauce", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
-    public static final RegistrySupplier<Item> COSMIC_BEEF = register("cosmic_beef", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
-    public static final RegistrySupplier<Item> COSMIC_BEEF_COOKED = register("cosmic_beef_cooked", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
-    public static final RegistrySupplier<Item> CRYSTAL_CABBAGE_LEAF = register("crystal_cabbage_leaf", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> BLAZE_TOMATO_SAUCE = register("blaze_tomato_sauce", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN).food(new FoodComponent.Builder().hunger(16).saturationModifier(1.2F).build())));
+    public static final RegistrySupplier<Item> COSMIC_BEEF = register("cosmic_beef", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN).food(FoodComponents.COOKED_CHICKEN)));
+    public static final RegistrySupplier<Item> COSMIC_BEEF_COOKED = register("cosmic_beef_cooked", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN).food(FoodComponents.BEEF)));
+    public static final RegistrySupplier<Item> CRYSTAL_CABBAGE_LEAF = register("crystal_cabbage_leaf", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.3F).build())));
     public static final RegistrySupplier<Item> RAW_CRYSTAL_PASTA = register("raw_crystal_pasta", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
-    public static final RegistrySupplier<Item> DIAMOND_LATTICE_FRIES = register("diamond_lattice_fries", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> DIAMOND_LATTICE_FRIES = register("diamond_lattice_fries", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN).food(FoodComponents.BAKED_POTATO)));
     public static final RegistrySupplier<Item> INFINITY_APPLE = register("infinity_apple", InfinityAppleItem::new);
     public static final RegistrySupplier<Item> INFINITY_LARGE_HAMBURGER = register("infinity_large_hamburger", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> INFINITY_TACO = register("infinity_taco", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));

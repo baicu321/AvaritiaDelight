@@ -1,0 +1,41 @@
+{
+  "type": "avaritia_delight:extreme_cooking_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:gold_ingot"
+    },
+    "N": {
+      "item": "minecraft:gold_nugget"
+    },
+    "M": {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    "G": {
+      "item": "minecraft:golden_apple"
+    },
+    "C": {
+      "item": "minecraft:golden_carrot"
+    },
+    "A": {
+      "item": "minecraft:apple"
+    },
+    "S": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "         ",
+    "   III   ",
+    "  NMCMN  ",
+    " IMGAGMI ",
+    " ICASACI ",
+    " IMGAGMI ",
+    "  NMCMN  ",
+    "   III   ",
+    "         "
+  ],
+  "result": {
+    "item": "minecraft:enchanted_golden_apple",
+    "count": 4
+  }
+}

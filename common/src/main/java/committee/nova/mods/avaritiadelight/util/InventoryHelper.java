@@ -86,7 +86,7 @@ public class InventoryHelper {
         if (inventory instanceof PlayerInventory playerInventory) {
             playerInventory.offerOrDrop(stack);
             return true;
-        } else for (int i = 0; i < inventory.size(); i++)
+        } else for (int i = start; i < inventory.size(); i++)
             if (inventory.getStack(i).isEmpty()) {
                 inventory.setStack(i, stack);
                 return true;

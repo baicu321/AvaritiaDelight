@@ -20,7 +20,8 @@
     "         "
   ],
   "result": {
-    "item": "avaritia_delight:neutronium_bread"
+    "item": "avaritia_delight:neutronium_bread",
+    "count": 10
   },
   "show_notification": true,
   "tier": 4
