@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "avaritia:blaze_cube_block",
+      "required": false
+    },
+    {
       "id": "avaritia:nether_crafting_table",
       "required": false
     },

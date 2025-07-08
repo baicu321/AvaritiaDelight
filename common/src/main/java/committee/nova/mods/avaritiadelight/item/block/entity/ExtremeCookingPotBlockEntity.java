@@ -156,11 +156,11 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         if (isHeated && cookingPot.hasInput()) {
             Optional<ExtremeCookingPotShapedRecipe> recipe = level.getRecipeManager().getFirstMatch(ExtremeCookingPotShapedRecipe.Type.INSTANCE, cookingPot, level);
             if (recipe.isPresent() && cookingPot.canCook(recipe.get()))
-                didInventoryChange = cookingPot.processCooking(recipe.get(), cookingPot);
+                didInventoryChange = cookingPot.processCooking(recipe.get());
             else {
                 Optional<ExtremeCookingPotShapelessRecipe> recipe2 = level.getRecipeManager().getFirstMatch(ExtremeCookingPotShapelessRecipe.Type.INSTANCE, cookingPot, level);
                 if (recipe2.isPresent() && cookingPot.canCook(recipe2.get()))
-                    didInventoryChange = cookingPot.processCooking(recipe2.get(), cookingPot);
+                    didInventoryChange = cookingPot.processCooking(recipe2.get());
                 else
                     cookingPot.cookTime = 0;
             }
@@ -216,7 +216,7 @@ public class ExtremeCookingPotBlockEntity extends SyncedBlockEntity implements E
         } else return false;
     }
 
-    private boolean processCooking(ExtremeCookingPotRecipe recipe, ExtremeCookingPotBlockEntity cookingPot) {
+    private boolean processCooking(ExtremeCookingPotRecipe recipe) {
         if (this.world == null) return false;
         else {
             ++this.cookTime;

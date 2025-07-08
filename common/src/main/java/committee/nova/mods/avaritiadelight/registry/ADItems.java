@@ -41,6 +41,24 @@ public final class ADItems {
     public static final RegistrySupplier<Item> NEUTRONIUM_BOWL = register("neutronium_bowl", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
     public static final RegistrySupplier<Item> NEUTRONIUM_BREAD = register("neutronium_bread", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
 
+    public static final RegistrySupplier<Item> ENDEST_EGG = register("endest_egg", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> ENDEST_EGG_SANDWICH = register("endest_egg_sandwich", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> ENDEST_FRIED_EGG = register("endest_fried_egg", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> ENDEST_PIE = register("endest_pie", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> SLICE_OF_ENDEST_PIE = register("slice_of_endest_pie", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> STAR_PIE = register("star_pie", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> SLICE_OF_STAR_PIE = register("slice_of_star_pie", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> STAR_PIE_CRUST = register("star_pie_crust", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> EXPERIENCE_JELLY = register("experience_jelly", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> INFINITY_CATALYST_COOKIE = register("infinity_catalyst_cookie", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> INFINITY_FLOWERS_TEA = register("infinity_flowers_tea", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> INFINITY_FRIES = register("infinity_fries", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> INFINITY_POPSICLE = register("infinity_popsicle", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> INFINITY_SALAD = register("infinity_salad", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> MOBS_STEW = register("mobs_stew", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> RECORD_FRAGMENT_COOKIE = register("record_fragment_cookie", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+    public static final RegistrySupplier<Item> ULTIMATE_GOURMET_STEW = register("ultimate_gourmet_stew", () -> new Item(new Item.Settings().arch$tab(ADItemGroups.MAIN)));
+
     public static final RegistrySupplier<Item> FURIOUS_COCKTAIL = register("furious_cocktail", FuriousCocktailItem::new);
     public static final RegistrySupplier<Item> HOW_DID_WE_GET_HERE = register("how_did_we_get_here", HowDidWeGetHereItem::new);
     public static final RegistrySupplier<Item> INFINITY_MILK = register("infinity_milk", InfinityMilkItem::new);

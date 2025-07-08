@@ -12,13 +12,10 @@
       "item": "minecraft:melon_slice"
     },
     {
-      "item": "minecraft:kelp"
+      "item": "minecraft:sweet_berries"
     },
     {
-      "item": "minecraft:sweet_berry_bush"
-    },
-    {
-      "item": "minecraft:cave_vines"
+      "item": "minecraft:glow_berries"
     },
     {
       "item": "minecraft:chorus_fruit"
@@ -30,7 +27,7 @@
       "item": "minecraft:golden_carrot"
     },
     {
-      "item": "minecraft:potatoes"
+      "item": "minecraft:potato"
     },
     {
       "item": "minecraft:poisonous_potato"
@@ -39,7 +36,7 @@
       "item": "minecraft:beetroot"
     },
     {
-      "item": "minecraft:dried_kelp"
+      "item": "minecraft:kelp"
     },
     {
       "item": "minecraft:nether_wart"
@@ -48,10 +45,10 @@
       "item": "minecraft:glistering_melon_slice"
     },
     {
-      "item": "minecraft:cocoa"
+      "item": "minecraft:cocoa_beans"
     },
     {
-      "item": "minecraft:pitcher_crop"
+      "item": "minecraft:pitcher_pod"
     },
     {
       "item": "minecraft:honey_bottle"
@@ -96,7 +93,7 @@
       "item": "farmersdelight:rotten_tomato"
     },
     {
-      "item": "farmersdelight:onions"
+      "item": "farmersdelight:onion"
     },
     {
       "item": "farmersdelight:rice"

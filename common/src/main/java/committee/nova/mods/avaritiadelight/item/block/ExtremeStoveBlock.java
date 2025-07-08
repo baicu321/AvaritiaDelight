@@ -123,6 +123,6 @@ public class ExtremeStoveBlock extends StoveBlock {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World level, BlockState state, BlockEntityType<T> type) {
-        return state.get(LIT) ? checkType(type, ADBlockEntities.EXTREME_STOVE.get(), level.isClient ? ExtremeStoveBlockEntity::animationTick : ExtremeStoveBlockEntity::cookingTick) : null;
+        return checkType(type, ADBlockEntities.EXTREME_STOVE.get(), level.isClient ? ExtremeStoveBlockEntity::animationTick : ExtremeStoveBlockEntity::cookingTick);
     }
 }

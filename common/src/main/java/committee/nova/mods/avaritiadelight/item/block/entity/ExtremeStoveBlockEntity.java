@@ -1,5 +1,6 @@
 package committee.nova.mods.avaritiadelight.item.block.entity;
 
+import committee.nova.mods.avaritiadelight.item.block.ExtremeStoveBlock;
 import committee.nova.mods.avaritiadelight.registry.ADBlockEntities;
 import committee.nova.mods.avaritiadelight.registry.ADItems;
 import net.minecraft.block.Block;
@@ -95,17 +96,12 @@ public class ExtremeStoveBlockEntity extends SyncedBlockEntity {
                 }
                 stove.inventoryChanged();
             }
-        } else if (isStoveLit)
-            stove.cookAndOutputItems();
-        else
-            for (int i = 0; i < stove.stacks.size(); ++i)
-                if (stove.cookingTimes[i] > 0)
-                    stove.cookingTimes[i] = MathHelper.clamp(stove.cookingTimes[i] - 2, 0, stove.cookingTimesTotal[i]);
+        } else stove.cookAndOutputItems(isStoveLit);
     }
 
     public static void animationTick(World level, BlockPos pos, BlockState state, ExtremeStoveBlockEntity stove) {
         for (int i = 0; i < stove.stacks.size(); ++i) {
-            if (!stove.stacks.get(i).isEmpty() && level.random.nextFloat() < 0.2F) {
+            if (!stove.stacks.get(i).isEmpty() && (!stove.stacks.get(i).isOf(ADItems.COSMIC_BEEF.get()) || state.get(ExtremeStoveBlock.LIT)) && level.random.nextFloat() < 0.2F) {
                 Vec2f stoveItemVector = stove.getStoveItemOffset(i);
                 Direction direction = state.get(StoveBlock.FACING);
                 int directionIndex = direction.getHorizontal();
@@ -120,37 +116,38 @@ public class ExtremeStoveBlockEntity extends SyncedBlockEntity {
         }
     }
 
-    private void cookAndOutputItems() {
+    private void cookAndOutputItems(boolean lit) {
         if (this.world != null) {
             boolean didInventoryChange = false;
 
             for (int i = 0; i < this.stacks.size(); ++i) {
                 ItemStack stoveStack = this.stacks.get(i);
-                if (!stoveStack.isEmpty()) {
-                    this.cookingTimes[i]++;
-                    if (stoveStack.isOf(ADItems.COSMIC_BEEF.get())) {
-                        if (this.cookingTimes[i] >= 10 * 20) {
-                            ItemUtils.spawnItemEntity(this.world, new ItemStack(ADItems.COSMIC_BEEF_COOKED.get()), (double) this.pos.getX() + 0.5, (double) this.pos.getY() + 1.0, (double) this.pos.getZ() + 0.5, this.world.random.nextGaussian() * 0.009999999776482582, 0.10000000149011612, this.world.random.nextGaussian() * 0.009999999776482582);
+                if (lit || !stoveStack.isOf(ADItems.COSMIC_BEEF.get())) {
+                    if (!stoveStack.isEmpty()) {
+                        this.cookingTimes[i]++;
+                        if (stoveStack.isOf(ADItems.COSMIC_BEEF.get())) {
+                            if (this.cookingTimes[i] >= 10 * 20) {
+                                ItemUtils.spawnItemEntity(this.world, new ItemStack(ADItems.COSMIC_BEEF_COOKED.get()), (double) this.pos.getX() + 0.5, (double) this.pos.getY() + 1.0, (double) this.pos.getZ() + 0.5, this.world.random.nextGaussian() * 0.009999999776482582, 0.10000000149011612, this.world.random.nextGaussian() * 0.009999999776482582);
+                                this.stacks.set(i, ItemStack.EMPTY);
+                                didInventoryChange = true;
+                            }
+                        } else if (this.cookingTimes[i] >= 20) {
+                            Inventory inventoryWrapper = new SimpleInventory(stoveStack);
+                            Optional<CampfireCookingRecipe> recipe = this.getMatchingRecipe(inventoryWrapper, i);
+                            if (recipe.isPresent()) {
+                                ItemStack resultStack = recipe.get().getOutput(this.world.getRegistryManager());
+                                if (!resultStack.isEmpty())
+                                    ItemUtils.spawnItemEntity(this.world, resultStack.copy(), (double) this.pos.getX() + 0.5, (double) this.pos.getY() + 1.0, (double) this.pos.getZ() + 0.5, this.world.random.nextGaussian() * 0.009999999776482582, 0.10000000149011612, this.world.random.nextGaussian() * 0.009999999776482582);
+                            }
+
                             this.stacks.set(i, ItemStack.EMPTY);
                             didInventoryChange = true;
                         }
-                    } else if (this.cookingTimes[i] >= 20) {
-                        Inventory inventoryWrapper = new SimpleInventory(stoveStack);
-                        Optional<CampfireCookingRecipe> recipe = this.getMatchingRecipe(inventoryWrapper, i);
-                        if (recipe.isPresent()) {
-                            ItemStack resultStack = recipe.get().getOutput(this.world.getRegistryManager());
-                            if (!resultStack.isEmpty())
-                                ItemUtils.spawnItemEntity(this.world, resultStack.copy(), (double) this.pos.getX() + 0.5, (double) this.pos.getY() + 1.0, (double) this.pos.getZ() + 0.5, this.world.random.nextGaussian() * 0.009999999776482582, 0.10000000149011612, this.world.random.nextGaussian() * 0.009999999776482582);
-                        }
-
-                        this.stacks.set(i, ItemStack.EMPTY);
-                        didInventoryChange = true;
                     }
-                }
+                } else if (this.cookingTimes[i] > 0)
+                    this.cookingTimes[i] = MathHelper.clamp(this.cookingTimes[i] - 2, 0, this.cookingTimesTotal[i]);
             }
-
-            if (didInventoryChange)
-                this.inventoryChanged();
+            if (didInventoryChange) this.inventoryChanged();
         }
     }
 

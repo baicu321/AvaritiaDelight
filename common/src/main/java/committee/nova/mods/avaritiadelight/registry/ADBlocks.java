@@ -4,15 +4,14 @@ import committee.nova.mods.avaritiadelight.AvaritiaDelight;
 import committee.nova.mods.avaritiadelight.item.block.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.HayBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
+import vectorwing.farmersdelight.common.block.BasketBlock;
+import vectorwing.farmersdelight.common.block.SkilletBlock;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -32,6 +31,8 @@ public final class ADBlocks {
     public static final RegistrySupplier<Block> SOUL_RICH_SOIL = register("soul_rich_soil", () -> new SoulRichSoilBlock(AbstractBlock.Settings.copy(Blocks.DIRT)));
     public static final RegistrySupplier<Block> SOUL_RICH_SOIL_FARMLAND = register("soul_rich_soil_farmland", () -> new SoilRichSoilFarmlandBlock(AbstractBlock.Settings.copy(Blocks.FARMLAND)));
 
+    public static final RegistrySupplier<Block> EXTREME_SKILLET = register("extreme_skillet", () -> new SkilletBlock(AbstractBlock.Settings.create().mapColor(MapColor.IRON_GRAY).strength(0.5F, 6.0F).sounds(BlockSoundGroup.LANTERN)));
+    public static final RegistrySupplier<Block> INFINITY_BASKET = register("infinity_basket", () -> new BasketBlock(AbstractBlock.Settings.create().strength(1.5F).sounds(BlockSoundGroup.BAMBOO_WOOD)));
     public static final RegistrySupplier<Block> CROP_EXTRACTOR = register("crop_extractor", () -> new CropExtractorBlock(AbstractBlock.Settings.create()));
 
     public static final RegistrySupplier<Block> BLAZE_TOMATO_CRATE = register("blaze_tomato_crate", () -> new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
