@@ -1,0 +1,42 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "C": {
+      "item": "avaritia_delight:star_pie_crust"
+    },
+    "N": {
+      "item": "avaritia:neutron_pile"
+    },
+    "S": {
+      "item": "avaritia:star_fuel"
+    },
+    "R": {
+      "item": "avaritia:refined_coal"
+    },
+    "B": {
+      "item": "avaritia:star_fuel_block"
+    },
+    ".": {
+      "item": "avaritia:blaze_cube"
+    },
+    "E": {
+      "item": "avaritia_delight:endest_egg"
+    }
+  },
+  "pattern": [
+    "         ",
+    "         ",
+    "  NNNNN  ",
+    "  NSSSN  ",
+    "  SRBRS  ",
+    "  S...S  ",
+    "  SECES  ",
+    "         ",
+    "         "
+  ],
+  "result": {
+    "item": "avaritia_delight:star_pie"
+  },
+  "show_notification": true,
+  "tier": 4
+}

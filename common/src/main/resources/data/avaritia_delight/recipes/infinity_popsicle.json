@@ -1,0 +1,36 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "C": {
+      "item": "avaritia:infinity_catalyst"
+    },
+    "I": {
+      "item": "avaritia:infinity_ingot"
+    },
+    "N": {
+      "item": "avaritia:infinity_nugget"
+    },
+    "B": {
+      "item": "minecraft:blue_ice"
+    },
+    "L": {
+      "tag": "minecraft:logs"
+    }
+  },
+  "pattern": [
+    "     CCC ",
+    "    CNNCC",
+    "   CNINNC",
+    "  CNININC",
+    " BNININC ",
+    "  BNINC  ",
+    "  LBNC   ",
+    " L  B    ",
+    "L        "
+  ],
+  "result": {
+    "item": "avaritia_delight:infinity_popsicle"
+  },
+  "show_notification": true,
+  "tier": 4
+}

@@ -1,0 +1,27 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "S": {
+      "item": "avaritia:star_fuel"
+    },
+    "M": {
+      "item": "minecraft:milk_bucket"
+    }
+  },
+  "pattern": [
+    "         ",
+    "         ",
+    "         ",
+    "         ",
+    " S  M  S ",
+    " SS   SS ",
+    "  SSSSS  ",
+    "         ",
+    "         "
+  ],
+  "result": {
+    "item": "avaritia_delight:star_pie_crust"
+  },
+  "show_notification": true,
+  "tier": 4
+}

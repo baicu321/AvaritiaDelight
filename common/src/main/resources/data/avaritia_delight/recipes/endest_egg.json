@@ -1,0 +1,36 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "E": {
+      "item": "minecraft:end_stone"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    },
+    "G": {
+      "item": "minecraft:egg"
+    },
+    ".": {
+      "item": "avaritia:endest_pearl"
+    },
+    "N": {
+      "item": "avaritia:neutron_ingot"
+    }
+  },
+  "pattern": [
+    "   EEE   ",
+    " EEPPPEE ",
+    " EPPPPPE ",
+    "EPPNGNPPE",
+    "EPPG.GPPE",
+    "EPPNGNPPE",
+    " EPPPPPE ",
+    " EEPPPEE ",
+    "   EEE   "
+  ],
+  "result": {
+    "item": "avaritia_delight:endest_egg"
+  },
+  "show_notification": true,
+  "tier": 4
+}

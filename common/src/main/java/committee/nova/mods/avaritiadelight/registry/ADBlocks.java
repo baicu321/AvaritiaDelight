@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import vectorwing.farmersdelight.common.block.BasketBlock;
+import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.block.SkilletBlock;
 
 import java.util.function.Function;
@@ -30,6 +31,9 @@ public final class ADBlocks {
     public static final RegistrySupplier<Block> NEUTRONIUM_HAY_BALE = register("neutronium_hay_bale", () -> new HayBlock(AbstractBlock.Settings.copy(Blocks.HAY_BLOCK)));
     public static final RegistrySupplier<Block> SOUL_RICH_SOIL = register("soul_rich_soil", () -> new SoulRichSoilBlock(AbstractBlock.Settings.copy(Blocks.DIRT)));
     public static final RegistrySupplier<Block> SOUL_RICH_SOIL_FARMLAND = register("soul_rich_soil_farmland", () -> new SoilRichSoilFarmlandBlock(AbstractBlock.Settings.copy(Blocks.FARMLAND)));
+    public static final RegistrySupplier<Block> MOBS_STEW = register("mobs_stew", () -> new Block(AbstractBlock.Settings.copy(Blocks.CAULDRON).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final RegistrySupplier<Block> ENDEST_PIE = register("endest_pie", () -> new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), ADItems.SLICE_OF_ENDEST_PIE));
+    public static final RegistrySupplier<Block> STAR_PIE = register("star_pie", () -> new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), ADItems.SLICE_OF_STAR_PIE));
 
     public static final RegistrySupplier<Block> EXTREME_SKILLET = register("extreme_skillet", () -> new SkilletBlock(AbstractBlock.Settings.create().mapColor(MapColor.IRON_GRAY).strength(0.5F, 6.0F).sounds(BlockSoundGroup.LANTERN)));
     public static final RegistrySupplier<Block> INFINITY_BASKET = register("infinity_basket", () -> new BasketBlock(AbstractBlock.Settings.create().strength(1.5F).sounds(BlockSoundGroup.BAMBOO_WOOD)));

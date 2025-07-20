@@ -1,0 +1,111 @@
+{
+  "type": "avaritia_delight:extreme_cooking_shapeless",
+  "category": "meals",
+  "ingredients": [
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia_delight:diamond_lattice_fries"
+    },
+    {
+      "item": "avaritia:neutron_nugget"
+    }
+  ],
+  "container": {
+    "item": "avaritia_delight:neutronium_bowl"
+  },
+  "result": {
+    "item": "avaritia_delight:infinity_fries"
+  }
+}

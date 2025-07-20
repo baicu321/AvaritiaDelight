@@ -1,0 +1,39 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "farmersdelight:block/pie_slice3",
+	"textures": {
+		"0": "avaritia_delight:block/star_pie_bottom",
+		"1": "avaritia_delight:block/star_pie_inner",
+		"2": "avaritia_delight:block/star_pie_ring",
+		"3": "avaritia_delight:block/star_pie_side",
+		"4": "avaritia_delight:block/star_pie_top",
+		"particle": "avaritia_delight:block/star_pie_bottom"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 2],
+			"to": [14, 4, 8],
+			"faces": {
+				"north": {"uv": [2, 12, 8, 16], "texture": "#3"},
+				"east": {"uv": [8, 12, 14, 16], "texture": "#3"},
+				"south": {"uv": [8, 12, 14, 16], "texture": "#1"},
+				"west": {"uv": [2, 12, 8, 16], "texture": "#1"},
+				"up": {"uv": [8, 14, 2, 8], "texture": "#4"},
+				"down": {"uv": [8, 8, 14, 14], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 3, 0],
+			"to": [16, 3, 16],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 3, 8]},
+			"faces": {
+				"north": {"uv": [1, 1, 15, 1], "texture": "#2"},
+				"east": {"uv": [1, 1, 15, 1], "texture": "#2"},
+				"south": {"uv": [1, 1, 15, 1], "texture": "#2"},
+				"west": {"uv": [1, 1, 15, 1], "texture": "#2"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
+}

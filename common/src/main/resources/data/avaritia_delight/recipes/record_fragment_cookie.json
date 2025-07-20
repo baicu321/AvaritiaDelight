@@ -1,0 +1,27 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "W": {
+      "item": "avaritia_delight:neutronium_wheat"
+    },
+    "F": {
+      "item": "avaritia:record_fragment"
+    }
+  },
+  "pattern": [
+    "         ",
+    "         ",
+    "         ",
+    "   WWW   ",
+    "  WWFWW  ",
+    "   WWW   ",
+    "         ",
+    "         ",
+    "         "
+  ],
+  "result": {
+    "item": "avaritia_delight:record_fragment_cookie"
+  },
+  "show_notification": true,
+  "tier": 4
+}
