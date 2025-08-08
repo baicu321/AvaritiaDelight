@@ -28,7 +28,7 @@ public final class AvaritiaDelight {
         ADRecipes.TYPE_REGISTRY.register();
         ADRecipes.SERIALIZER_REGISTRY.register();
         ADScreenHandlers.REGISTRY.register();
-
+        ADEffects.REGISTRY.register();
         CommandRegistrationEvent.EVENT.register((dispatcher, access, env) -> {
             dispatcher.register(CommandManager.literal("nbt").requires(ServerCommandSource::isExecutedByPlayer).executes(ctx -> {
                 PlayerEntity player = ctx.getSource().getPlayerOrThrow();
