@@ -1,6 +1,7 @@
 package committee.nova.mods.avaritiadelight.registry;
 
 import committee.nova.mods.avaritiadelight.render.ExtremeStoveBlockEntityRenderer;
+import committee.nova.mods.avaritiadelight.render.StarCampFireRenderer;
 import committee.nova.mods.avaritiadelight.screen.gui.CropExtractorScreen;
 import committee.nova.mods.avaritiadelight.screen.gui.ExtremeCookingPotScreen;
 import committee.nova.mods.avaritiadelight.screen.gui.InfinityCabinetScreen;
@@ -15,6 +16,7 @@ import net.minecraft.client.render.RenderLayer;
 public final class ADRenderers {
     public static void registerBlockEntityRenderers() {
         BlockEntityRendererRegistry.register(ADBlockEntities.EXTREME_STOVE.get(), ExtremeStoveBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.register(ADBlockEntities.STAR_CAMPFIRE.get(), StarCampFireRenderer::new);
     }
 
     public static void registerRenderLayers() {

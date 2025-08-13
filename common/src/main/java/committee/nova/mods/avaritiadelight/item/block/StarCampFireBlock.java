@@ -6,7 +6,6 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.CampfireBlockEntity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -63,7 +62,7 @@ public class StarCampFireBlock extends BlockWithEntity implements Waterloggable 
     }
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof CampfireBlockEntity campfireBlockEntity) {
+        if (blockEntity instanceof StarCampFireBlockEntity campfireBlockEntity) {
             ItemStack itemStack = player.getStackInHand(hand);
             Optional<CampfireCookingRecipe> optional = campfireBlockEntity.getRecipeFor(itemStack);
             if (optional.isPresent()) {
