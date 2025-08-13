@@ -1,6 +1,7 @@
-package committee.nova.mods.avaritiadelight.block;
+package committee.nova.mods.avaritiadelight.item.block;
 
-import committee.nova.mods.avaritiadelight.block.entity.StarCampFireBlockEntity;
+import committee.nova.mods.avaritiadelight.item.block.entity.StarCampFireBlockEntity;
+import committee.nova.mods.avaritiadelight.registry.ADBlockEntities;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -234,14 +235,18 @@ public class StarCampFireBlock extends BlockWithEntity implements Waterloggable 
         return new StarCampFireBlockEntity(pos, state);
     }
 
+
     @Nullable
+    @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         if (world.isClient) {
-            return (Boolean)state.get(LIT) ? checkType(type, BlockEntityType.CAMPFIRE, StarCampFireBlockEntity::clientTick) : null;
+            return (Boolean)state.get(LIT) ? checkType(type, ADBlockEntities.STAR_CAMPFIRE.get(), StarCampFireBlockEntity::clientTick) : null;
         } else {
-            return (Boolean)state.get(LIT) ? checkType(type, BlockEntityType.CAMPFIRE, StarCampFireBlockEntity::litServerTick) : checkType(type, BlockEntityType.CAMPFIRE, StarCampFireBlockEntity::unlitServerTick);
+            return (Boolean)state.get(LIT) ? checkType(type,  ADBlockEntities.STAR_CAMPFIRE.get(), StarCampFireBlockEntity::litServerTick) : checkType(type,  ADBlockEntities.STAR_CAMPFIRE.get(), StarCampFireBlockEntity::unlitServerTick);
         }
     }
+
+
 
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return false;

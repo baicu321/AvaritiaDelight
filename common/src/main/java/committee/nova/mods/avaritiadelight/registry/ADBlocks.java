@@ -1,7 +1,7 @@
 package committee.nova.mods.avaritiadelight.registry;
 
 import committee.nova.mods.avaritiadelight.AvaritiaDelight;
-import committee.nova.mods.avaritiadelight.block.StarCampFireBlock;
+import committee.nova.mods.avaritiadelight.item.block.StarCampFireBlock;
 import committee.nova.mods.avaritiadelight.item.block.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
@@ -44,7 +44,7 @@ public final class ADBlocks {
     public static final RegistrySupplier<Block> CRYSTAL_CABBAGE_CRATE = register("crystal_cabbage_crate", () -> new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
     public static final RegistrySupplier<Block> DIAMOND_LATTICE_POTATO_CRATE = register("diamond_lattice_potato_crate", () -> new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
 
-    public static final RegistrySupplier<Block> STAR_CAMPFIRE = register("star_campfire", () -> new StarCampFireBlock(true, 10, AbstractBlock.Settings.copy(Blocks.CAMPFIRE)));
+    public static final RegistrySupplier<Block> STAR_CAMPFIRE = register("star_campfire", () -> new StarCampFireBlock(true, 0, AbstractBlock.Settings.copy(Blocks.CAMPFIRE)));
 
     public static <T extends Block> RegistrySupplier<T> register(String id, Supplier<T> supplier) {
         return register(id, supplier, block -> new BlockItem(block, new Item.Settings().arch$tab(ADItemGroups.MAIN)));

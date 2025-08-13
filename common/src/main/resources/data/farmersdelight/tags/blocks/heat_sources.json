@@ -9,6 +9,7 @@
       "id": "avaritia:nether_crafting_table",
       "required": false
     },
-    "avaritia_delight:extreme_stove"
+    "avaritia_delight:extreme_stove",
+    "avaritia_delight:star_campfire"
   ]
 }
