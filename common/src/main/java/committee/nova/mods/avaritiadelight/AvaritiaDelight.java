@@ -47,4 +47,5 @@ public final class AvaritiaDelight {
             return EventResult.pass();
         });
     }
+
 }
